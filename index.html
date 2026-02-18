@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emibit | Curso de Bitcoin y Autocustodia para principiantes</title>
+    <meta
+      name="description"
+      content="Aprende Bitcoin y autocustodia con Emibit (Emiliano Rubinsky): simple, práctico y sin promesas falsas."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+    <header class="site-header container">
+      <a href="#home" class="brand">EmiBit</a>
+      <nav class="main-nav">
+        <a href="#home">Home</a>
+        <a href="#por-que-aprender-bitcoin">Por qué aprender Bitcoin</a>
+        <a href="#precios">Servicios</a>
+        <a href="#articulos">Recursos gratis</a>
+      </nav>
+      <a href="#inscripcion" class="btn btn-small">Hablar con Emiliano</a>
+    </header>
+
+    <aside class="btc-ticker" aria-live="polite">
+      <p class="btc-label">BTC/USD en vivo</p>
+      <p class="btc-price" id="btcPrice">Conectando...</p>
+      <p class="btc-meta">
+        <span id="btcChange">Buscando precio</span>
+        <span class="btc-sep">·</span>
+        actualizado <span id="btcUpdated">--:--</span>
+      </p>
+    </aside>
+
+    <main>
+      <section id="home" class="hero container reveal">
+        <p class="kicker">Mentoría de Bitcoin para principiantes</p>
+        <h1>Aprende todo de Bitcoin y cuidalo haciendo autocustodia</h1>
+        <p class="lead">
+          Soy <strong>Emibit (Emiliano Rubinsky)</strong>. Te enseño paso a paso,
+          con lenguaje simple y práctica guiada para que no dependas de terceros.
+        </p>
+        <div class="hero-actions">
+          <a href="#inscripcion" class="btn">Quiero empezar con Emibit</a>
+          <a href="#precios" class="btn btn-outline">Ver precios claros</a>
+        </div>
+        <ul class="hero-badges">
+          <li>Apto 100% para principiantes</li>
+          <li>Sin promesas de ganancias rápidas</li>
+          <li>Método seguro y transparente</li>
+        </ul>
+      </section>
+
+      <section class="security-banner container reveal">
+        <p>
+          Regla de oro de Emibit: <strong>nunca</strong> te voy a pedir seed phrase,
+          clave privada ni códigos de autenticación.
+        </p>
+      </section>
+
+      <section id="por-que-aprender-bitcoin" class="learn-bitcoin container reveal">
+        <p class="kicker">Por qué aprender Bitcoin</p>
+        <h2>CUIDA DE TU BITCOIN</h2>
+        <p class="lead">
+          ¿Cómo puedes perder tu Bitcoin y por qué es importante que aprendas
+          todas las medidas de seguridad para evitarlo?
+        </p>
+        <article class="card learn-bitcoin-card">
+          <p>
+            Esta sección es el punto de partida para desarrollar este tema paso a
+            paso: riesgos reales, errores frecuentes y protocolo de protección.
+          </p>
+          <p class="muted-text">
+            Próximamente vamos a expandirla con casos concretos y checklist
+            accionable.
+          </p>
+        </article>
+      </section>
+
+      <section class="trust container reveal">
+        <h2>Mi compromiso como mentor</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>No vendo humo</h3>
+            <p>
+              No doy señales, no prometo rentabilidad y no recomiendo endeudarte
+              para comprar Bitcoin.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Educación primero</h3>
+            <p>
+              Te explico riesgos, buenas prácticas y decisiones para que entiendas
+              qué estás haciendo y por qué.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Proceso humano</h3>
+            <p>
+              Avanzamos a tu ritmo. Si algo no te queda claro, lo repetimos hasta
+              que tengas seguridad.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="articulos" class="articles container reveal">
+        <div class="section-head">
+          <p class="kicker">Ruta de lectura</p>
+          <h2>Empieza por artículos simples y bien explicados</h2>
+          <p class="muted-text">
+            Antes de las grabaciones, te recomiendo este orden. Cada artículo está
+            pensado para principiantes y escrito en lenguaje claro.
+          </p>
+        </div>
+        <div class="cards">
+          <article class="card article-card">
+            <p class="article-meta">Nivel 1 - 7 min</p>
+            <h3>¿Qué es Bitcoin y para qué sirve?</h3>
+            <p>
+              Concepto base, por qué existe y cómo diferenciarlo de una inversión
+              especulativa.
+            </p>
+            <a class="text-link" href="articulos/01-que-es-bitcoin.html"
+              >Leer artículo</a
+            >
+          </article>
+          <article class="card article-card">
+            <p class="article-meta">Nivel 1 - 10 min</p>
+            <h3>Por qué necesitamos Bitcoin</h3>
+            <p>
+              Cómo cambió el dinero desde 1971 y por qué Bitcoin propone reglas
+              fijas frente a la emisión sin límite.
+            </p>
+            <a class="text-link" href="articulos/02-por-que-necesitamos-bitcoin.html"
+              >Leer artículo</a
+            >
+          </article>
+          <article class="card article-card">
+            <p class="article-meta">Nivel 2 - 11 min</p>
+            <h3>La diferencia entre comprar Bitcoin y tener Bitcoin</h3>
+            <p>
+              Por qué ver un saldo en un exchange no es lo mismo que tener control
+              real del activo en la red.
+            </p>
+            <a class="text-link" href="articulos/03-comprar-vs-tener-bitcoin.html"
+              >Leer artículo</a
+            >
+          </article>
+          <article class="card article-card">
+            <p class="article-meta">Nivel 2 - 9 min</p>
+            <h3>Cómo hacer tu primer backup seguro</h3>
+            <p>
+              Método práctico de respaldo físico y verificación para reducir riesgo
+              de pérdida.
+            </p>
+            <a class="text-link" href="articulos/04-backup-seguro.html"
+              >Leer artículo</a
+            >
+          </article>
+          <article class="card article-card">
+            <p class="article-meta">Nivel 2 - 8 min</p>
+            <h3>Qué hacer (y qué no) si sospechas una estafa</h3>
+            <p>
+              Señales de alerta, pasos inmediatos y canales de ayuda para actuar
+              con calma.
+            </p>
+            <a class="text-link" href="articulos/05-alerta-estafa.html"
+              >Leer artículo</a
+            >
+          </article>
+          <article class="card article-card">
+            <p class="article-meta">Nivel 3 - 11 min</p>
+            <h3>Tu protocolo personal de autocustodia en una página</h3>
+            <p>
+              Plantilla para definir reglas, responsables y pasos de recuperación
+              familiar.
+            </p>
+            <a class="text-link" href="articulos/06-protocolo-personal.html"
+              >Leer artículo</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <section id="temario" class="syllabus container reveal">
+        <div class="section-head">
+          <p class="kicker">Temario base</p>
+          <h2>Qué vas a aprender conmigo</h2>
+        </div>
+        <ol class="timeline">
+          <li>
+            <h3>Semana 1: Bitcoin desde cero</h3>
+            <p>
+              Conceptos esenciales, wallets, comisiones y cómo evitar errores
+              comunes al comenzar.
+            </p>
+          </li>
+          <li>
+            <h3>Semana 2: Seguridad práctica</h3>
+            <p>
+              Configuración segura, confirmaciones, respaldo inicial y hábitos de
+              protección diarios.
+            </p>
+          </li>
+          <li>
+            <h3>Semana 3: Autocustodia guiada</h3>
+            <p>
+              Seed phrase, plan de recuperación, almacenamiento físico y pruebas de
+              restauración.
+            </p>
+          </li>
+          <li>
+            <h3>Semana 4: Tu protocolo personal</h3>
+            <p>
+              Diseñas un sistema concreto para operar y custodiar con calma,
+              claridad y disciplina.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="precios" class="pricing container reveal">
+        <div class="section-head">
+          <p class="kicker">Precios recomendados</p>
+          <h2>Capacitaciones Emibit</h2>
+          <p class="muted-text">
+            Precios transparentes en USD/USDT. La formación de autocustodia es más
+            profunda y por eso tiene valor premium.
+          </p>
+        </div>
+        <div class="cards">
+          <article class="card price-card">
+            <p class="price-title">Bitcoin Inicial (grupal)</p>
+            <p class="price-value">USD 149 <span>preventa</span></p>
+            <p class="price-normal">USD 197 precio normal</p>
+            <ul>
+              <li>4 clases en vivo</li>
+              <li>Grabaciones por 6 meses</li>
+              <li>Guía de conceptos base</li>
+            </ul>
+          </article>
+          <article class="card price-card featured">
+            <p class="tag">MÁS ELEGIDO</p>
+            <p class="price-title">Autocustodia (grupal)</p>
+            <p class="price-value">USD 249 <span>preventa</span></p>
+            <p class="price-normal">USD 329 precio normal</p>
+            <ul>
+              <li>Implementación paso a paso</li>
+              <li>Checklist de seguridad</li>
+              <li>Sesión de Q&A en vivo</li>
+            </ul>
+          </article>
+          <article class="card price-card">
+            <p class="price-title">Pack completo</p>
+            <p class="price-value">USD 349 <span>preventa</span></p>
+            <p class="price-normal">USD 447 precio normal</p>
+            <ul>
+              <li>Bitcoin Inicial + Autocustodia</li>
+              <li>Soporte en comunidad privada</li>
+              <li>Plantilla de plan familiar</li>
+            </ul>
+          </article>
+        </div>
+        <p class="pricing-note">
+          Mentoría privada opcional: <strong>USD 299 (90 minutos)</strong>.
+        </p>
+      </section>
+
+      <section class="instructor container reveal">
+        <div>
+          <p class="kicker">Tu mentor</p>
+          <h2>Emibit, por Emiliano Rubinsky</h2>
+          <p>
+            Mi objetivo es que aprendas con tranquilidad. Te explico de forma
+            simple y te ayudo a construir criterio para tomar buenas decisiones.
+          </p>
+        </div>
+        <ul>
+          <li>Clases claras, sin tecnicismos innecesarios</li>
+          <li>Práctica guiada con casos reales</li>
+          <li>Acompañamiento cercano y respetuoso</li>
+        </ul>
+      </section>
+
+      <section id="faq" class="faq container reveal">
+        <h2>Preguntas frecuentes de principiantes</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>No sé nada de Bitcoin. ¿Igual puedo?</h3>
+            <p>
+              Sí. El programa está pensado para comenzar desde cero, sin necesidad
+              de conocimientos previos.
+            </p>
+          </article>
+          <article class="card">
+            <h3>¿Esto es asesoría financiera?</h3>
+            <p>
+              No. Es formación educativa para que entiendas herramientas, riesgos y
+              buenas prácticas.
+            </p>
+          </article>
+          <article class="card">
+            <h3>¿Me van a apurar para comprar?</h3>
+            <p>
+              No. En Emibit priorizamos aprender y decidir con calma. Nunca por
+              presión.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="inscripcion" class="cta container reveal">
+        <div>
+          <p class="kicker">Inscripciones abiertas</p>
+          <h2>Reserva una llamada breve y vemos si este curso es para ti</h2>
+          <p>
+            Sin compromiso: primero conversamos tu nivel y objetivo. Si no te sirve
+            ahora, te lo voy a decir con honestidad.
+          </p>
+        </div>
+        <form class="signup-form">
+          <label for="name">Nombre</label>
+          <input id="name" name="name" type="text" placeholder="Tu nombre" />
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="tu@email.com" />
+          <label for="course">Capacitación que te interesa</label>
+          <select id="course" name="course">
+            <option>Bitcoin Inicial</option>
+            <option>Autocustodia</option>
+            <option>Pack completo</option>
+            <option>Mentoría 1:1</option>
+          </select>
+          <button type="submit" class="btn">Quiero hablar con Emibit</button>
+          <small
+            >Respuesta en menos de 24 horas hábiles. Nada de spam, nada de
+            presión.</small
+          >
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <p>© 2026 Emibit - Emiliano Rubinsky. Educación sobre Bitcoin y autocustodia.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

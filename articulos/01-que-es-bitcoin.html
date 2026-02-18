@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué es Bitcoin? | Emibit</title>
+    <meta name="description" content="Introducción clara y profunda a Bitcoin para principiantes: fundamentos, pilares y por qué importa.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .top-link-wrap {
+            padding: 20px 30px 0;
+            background: white;
+        }
+
+        .top-link {
+            color: #5d4f91;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .top-link:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '₿';
+            position: absolute;
+            font-size: 300px;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: white;
+            margin-bottom: 15px;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 300;
+            position: relative;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .intro {
+            font-size: 1.25em;
+            color: #34495e;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-left: 5px solid #f7971e;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin: 40px 0 20px 0;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #f7971e, #ffd200);
+        }
+
+        .concept {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .concept:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .concept h3 {
+            color: #f7971e;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ffd200 0%, #f7971e 100%);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .quote {
+            font-style: italic;
+            border-left: 4px solid #f7971e;
+            padding-left: 20px;
+            margin: 30px 0;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .pillar {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #f7971e;
+        }
+
+        .pillar-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .pillar h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .analogy {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .analogy h3 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .pillars {
+                grid-template-columns: 1fr;
+            }
+
+            .top-link-wrap {
+                padding: 16px 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-link-wrap">
+            <a class="top-link" href="../index.html#articulos">← Volver a Emibit</a>
+        </div>
+
+        <div class="hero">
+            <h1>¿Qué es Bitcoin?</h1>
+            <p class="subtitle">Una red descentralizada de confianza matemática</p>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                Bitcoin no es solo dinero digital. Bitcoin es una <strong>revolución en cómo coordinamos valor y confianza</strong> sin depender de autoridades centrales. Es la primera vez en la historia que podemos transferir valor por internet de manera nativa, sin intermediarios.
+            </div>
+
+            <h2>La Esencia de Bitcoin</h2>
+            <p>Bitcoin resuelve un problema fundamental que ha existido desde el inicio de internet: <span class="highlight">¿Cómo podemos confiar en un sistema sin confiar en ninguna entidad específica?</span></p>
+            
+            <p style="margin-top: 20px;">Antes de Bitcoin, todo dinero digital requería un intermediario de confianza: un banco, una empresa de pagos, o un gobierno. Bitcoin cambia esto radicalmente al crear un sistema donde la confianza emerge del consenso matemático y criptográfico, no de instituciones centralizadas.</p>
+
+            <div class="concept">
+                <h3>Una Red de Consenso</h3>
+                <p>Bitcoin es una red peer-to-peer donde miles de computadoras (nodos) alrededor del mundo mantienen una copia idéntica de un libro contable público (la blockchain). No hay un servidor central que pueda ser apagado, censurado o controlado. Cada participante verifica independientemente todas las transacciones según reglas matemáticas predefinidas.</p>
+            </div>
+
+            <div class="concept">
+                <h3>Escasez Digital Verificable</h3>
+                <p>Por primera vez en la historia digital, tenemos algo verdaderamente escaso. Solo existirán <strong>21 millones de bitcoins</strong>, y esta regla está protegida por matemáticas y consenso distribuido, no por la promesa de un gobierno o banco central. La emisión es predecible y transparente, reduciéndose a la mitad aproximadamente cada 4 años (evento conocido como "halving").</p>
+            </div>
+
+            <div class="concept">
+                <h3>Criptografía de Clave Pública</h3>
+                <p>Bitcoin utiliza criptografía asimétrica: tienes una clave privada (como una contraseña ultra-segura que nunca compartes) y una clave pública (como tu número de cuenta que puedes compartir libremente). Solo quien posee la clave privada puede gastar los bitcoins asociados a esa dirección.</p>
+            </div>
+
+            <div class="concept">
+                <h3>Prueba de Trabajo (Proof of Work)</h3>
+                <p>Los mineros compiten resolviendo complejos problemas matemáticos para agregar nuevos bloques de transacciones a la blockchain. Este proceso consume energía intencionalmente, haciendo que atacar la red sea extremadamente costoso y asegurando que ningún actor malicioso pueda reescribir el historial de transacciones.</p>
+            </div>
+
+            <div class="concept">
+                <h3>Dinero Programable</h3>
+                <p>Bitcoin es dinero que puede ser programado con reglas matemáticas. Puedes crear transacciones que solo se ejecuten bajo ciertas condiciones, sistemas de múltiples firmas (multisig), o construir aplicaciones financieras complejas encima de él.</p>
+            </div>
+
+            <div class="concept">
+                <h3>Resistencia a la Censura</h3>
+                <p>Debido a su naturaleza descentralizada, ningún gobierno, banco o entidad puede detener, censurar o revertir transacciones de Bitcoin. Una vez confirmada en la blockchain, una transacción es prácticamente inmutable.</p>
+            </div>
+
+            <div class="quote">
+                "Bitcoin representa la separación del dinero y el Estado, de la misma manera que nuestros antepasados lograron la separación de la Iglesia y el Estado."
+            </div>
+
+            <h2>Los Pilares Fundamentales</h2>
+            <div class="pillars">
+                <div class="pillar">
+                    <div class="pillar-icon">🌐</div>
+                    <h4>Descentralización</h4>
+                    <p>No hay un punto único de fallo. El poder está distribuido entre todos los participantes de la red, sin jerarquías.</p>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-icon">🔓</div>
+                    <h4>Open Source</h4>
+                    <p>El código es público y auditable. Cualquiera puede verificar que las reglas se cumplan y proponer mejoras.</p>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-icon">🛡️</div>
+                    <h4>Seguridad Criptográfica</h4>
+                    <p>Tu dinero está protegido por las mismas matemáticas que aseguran las comunicaciones militares y bancarias.</p>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-icon">⚖️</div>
+                    <h4>Sin Permisos</h4>
+                    <p>Nadie puede prohibirte usar Bitcoin. No necesitas permiso de un banco o gobierno para participar.</p>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-icon">🔄</div>
+                    <h4>Inmutabilidad</h4>
+                    <p>Una vez confirmadas, las transacciones no pueden ser revertidas o alteradas sin el consenso de la mayoría de la red.</p>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-icon">👁️</div>
+                    <h4>Transparencia</h4>
+                    <p>Todas las transacciones son públicas y verificables en la blockchain. El sistema opera con total transparencia.</p>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-icon">🔢</div>
+                    <h4>Divisibilidad</h4>
+                    <p>Cada bitcoin puede dividirse en 100 millones de unidades llamadas "satoshis", permitiendo micropagos y flexibilidad.</p>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-icon">✈️</div>
+                    <h4>Portabilidad Global</h4>
+                    <p>Puedes llevar cualquier cantidad de bitcoins cruzando fronteras simplemente memorizando 12 o 24 palabras.</p>
+                </div>
+            </div>
+
+            <h2>¿Cómo Funciona Bitcoin?</h2>
+            
+            <div class="concept">
+                <h3>La Blockchain</h3>
+                <p>La blockchain es un libro contable público distribuido que registra todas las transacciones de Bitcoin. Cada "bloque" contiene un conjunto de transacciones y está vinculado criptográficamente al bloque anterior, formando una cadena inmutable. Un nuevo bloque se agrega aproximadamente cada 10 minutos.</p>
+            </div>
+
+            <div class="concept">
+                <h3>Wallets y Llaves</h3>
+                <p>Una wallet (billetera) de Bitcoin no guarda monedas físicamente, sino las claves criptográficas que te permiten acceder y gastar tus bitcoins en la blockchain. Tu clave privada es como la firma digital que autoriza transacciones; tu clave pública/dirección es donde otros pueden enviarte bitcoins.</p>
+            </div>
+
+            <div class="concept">
+                <h3>Las Transacciones</h3>
+                <p>Cuando envías bitcoins, creas una transacción firmada digitalmente con tu clave privada. Esta transacción se transmite a la red peer-to-peer, donde los nodos la verifican. Los mineros la incluyen en un bloque, y una vez confirmada en la blockchain, es prácticamente irreversible.</p>
+            </div>
+
+            <div class="concept">
+                <h3>La Red Lightning</h3>
+                <p>Para pagos instantáneos y de bajo costo, existe Lightning Network: una segunda capa sobre Bitcoin que permite millones de transacciones por segundo fuera de la blockchain principal, liquidando periódicamente en la cadena base.</p>
+            </div>
+
+            <h2>¿Por Qué Importa Bitcoin?</h2>
+            
+            <div class="concept">
+                <h3>Inclusión Financiera</h3>
+                <p>Más de 2 mil millones de personas no tienen acceso a servicios bancarios. Con Bitcoin, solo necesitas un teléfono con internet para participar en la economía global, sin necesidad de documentación, historial crediticio o aprobación de terceros.</p>
+            </div>
+
+            <div class="concept">
+                <h3>Soberanía Individual</h3>
+                <p>Con Bitcoin, tú eres tu propio banco. Nadie puede congelar tus fondos, bloquear tus transacciones o confiscar tu dinero arbitrariamente. Tienes control absoluto sobre tu riqueza.</p>
+            </div>
+
+            <div class="concept">
+                <h3>Protección Contra la Inflación</h3>
+                <p>A diferencia de las monedas fiduciarias que pueden imprimirse sin límite, Bitcoin tiene un suministro fijo de 21 millones. Esta escasez programada lo convierte en una reserva de valor resistente a la devaluación monetaria causada por políticas inflacionarias.</p>
+            </div>
+
+            <div class="concept">
+                <h3>Innovación Sin Permiso</h3>
+                <p>Como internet permitió la innovación sin pedir permiso a las compañías telefónicas, Bitcoin permite la innovación financiera sin pedir permiso a los bancos. Cualquier desarrollador puede construir aplicaciones sobre Bitcoin.</p>
+            </div>
+
+            <div class="analogy">
+                <h3>Una Analogía Poderosa</h3>
+                <p>Piensa en Bitcoin como el internet del dinero. Así como internet democratizó la información y la comunicación, Bitcoin democratiza el dinero y el valor. No necesitas permiso para enviar un email; con Bitcoin, no necesitas permiso para enviar valor.</p>
+            </div>
+
+            <h2>Más Allá del Precio</h2>
+            <p>Bitcoin no se trata del precio o de "hacerse rico rápido". Se trata de:</p>
+            
+            <div class="concept">
+                <p><strong>✓ Libertad financiera</strong> - Control total sobre tu dinero<br>
+                <strong>✓ Privacidad</strong> - Transacciones sin vigilancia masiva<br>
+                <strong>✓ Neutralidad</strong> - Un sistema que no discrimina<br>
+                <strong>✓ Transparencia</strong> - Reglas claras que todos pueden verificar<br>
+                <strong>✓ Resistencia a la censura</strong> - Nadie puede detener la red</p>
+            </div>
+
+            <div class="quote">
+                "Bitcoin no es solo tecnología, no es solo economía. Bitcoin es una conversación sobre el futuro de nuestra sociedad, sobre cómo nos organizamos, sobre quién tiene el poder y cómo ese poder puede ser distribuido de manera más equitativa."
+            </div>
+
+            <div class="intro" style="margin-top: 40px; border-left-color: #667eea;">
+                <strong>El viaje de aprender Bitcoin no termina aquí.</strong> Es un sistema complejo pero elegante que recompensa la curiosidad y el estudio. Cada capa que descubres revela más profundidad, más ingeniería brillante, más posibilidades para el futuro.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
