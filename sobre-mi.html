@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
     <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
 
@@ -28,20 +29,77 @@
       <nav class="main-nav">
         <a href="index.html#home">Home</a>
         <a href="cursos-info.html">Cursos Info</a>
-        <a href="sobre-mi.html">Sobre Mí</a>
+        <a href="sobre-mi.html" aria-current="page">Sobre Mí</a>
         <a href="contacto.html">Contacto</a>
       </nav>
+      <a href="contacto.html" class="btn btn-small header-cta">Hablar conmigo</a>
     </header>
 
-    <main>
+    <main id="contenido">
       <section class="hero container reveal">
-        <p class="kicker">Sobre Mí</p>
-        <h1>Quién está detrás de EstudioBTC</h1>
-        <p class="lead">
-          Esta página queda preparada para que desarrolles tu historia, tu enfoque
-          de enseñanza y por qué acompañas a principiantes en Bitcoin y
-          autocustodia.
-        </p>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">Sobre Mí</p>
+            <h1>Quién está detrás de EstudioBTC</h1>
+            <p class="lead">
+              Soy Emiliano Rubinsky y creé EstudioBTC para acompañar a
+              principiantes que quieren entender Bitcoin sin humo, sin promesas de
+              rentabilidad y sin depender ciegamente de terceros.
+            </p>
+            <div class="hero-actions">
+              <a href="contacto.html" class="btn">Quiero hablar contigo</a>
+              <a href="cursos-info.html" class="btn btn-outline">Ver cursos</a>
+            </div>
+          </div>
+          <aside class="hero-panel hero-panel-compact">
+            <p class="panel-kicker">Mi forma de trabajar</p>
+            <div class="hero-proof">
+              <div class="hero-proof-item">
+                <span>Estilo</span>
+                <strong>Claro, paciente y directo</strong>
+              </div>
+              <div class="hero-proof-item">
+                <span>Prioridad</span>
+                <strong>Seguridad antes que velocidad</strong>
+              </div>
+              <div class="hero-proof-item">
+                <span>Meta</span>
+                <strong>Que entiendas y no dependas</strong>
+              </div>
+              <div class="hero-proof-item">
+                <span>Promesa</span>
+                <strong>Nada de humo ni presión</strong>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="profile-grid container reveal">
+        <article class="profile-story">
+          <div class="section-head">
+            <p class="kicker">Enfoque</p>
+            <h2>Enseño para que ganes criterio, no dependencia</h2>
+          </div>
+          <p>
+            Mi trabajo está centrado en explicar con lenguaje simple temas que a
+            menudo se presentan de forma innecesariamente compleja. Bitcoin puede
+            abrir oportunidades, pero también exige responsabilidad, contexto y
+            hábitos de seguridad.
+          </p>
+          <p>
+            Por eso en EstudioBTC no vas a encontrar señales, urgencia artificial
+            ni promesas de multiplicar dinero. Vas a encontrar orden, criterio y
+            acompañamiento para avanzar a tu ritmo.
+          </p>
+        </article>
+        <aside class="quote-card">
+          <p class="quote-card-text">
+            "Prefiero que tomes una decisión lenta, pero bien entendida, antes que
+            una rápida basada en miedo o entusiasmo."
+          </p>
+          <p class="quote-card-author">Emiliano Rubinsky · EstudioBTC</p>
+        </aside>
       </section>
 
       <section class="container reveal">
@@ -49,24 +107,38 @@
           <article class="card">
             <h3>Mi enfoque</h3>
             <p>
-              Espacio reservado para explicar tu método de trabajo, valores y cómo
-              simplificas temas complejos sin vender humo.
+              Simplifico conceptos complejos, separo lo importante del ruido y te
+              explico cada paso para que entiendas el porqué detrás de cada decisión.
             </p>
           </article>
           <article class="card">
             <h3>Mi experiencia</h3>
             <p>
-              Espacio para contar recorrido, aprendizaje práctico y por qué hoy
-              enseñas desde la responsabilidad y la claridad.
+              Trabajo desde la práctica, la observación de errores frecuentes y la
+              convicción de que aprender seguridad es parte esencial del camino.
             </p>
           </article>
           <article class="card">
             <h3>Qué puede esperar el alumno</h3>
             <p>
-              Espacio para detallar el tipo de acompañamiento, ritmo y resultados
-              realistas de las clases.
+              Un acompañamiento cercano, explicaciones realistas y una hoja de ruta
+              clara para pasar de la confusión a la autonomía.
             </p>
           </article>
+        </div>
+      </section>
+
+      <section class="cta container reveal">
+        <div>
+          <p class="kicker">Siguiente paso</p>
+          <h2>Si quieres aprender con calma, podemos hablar</h2>
+          <p>
+            Cuéntame en qué etapa estás y te diré qué formato tiene más sentido
+            para ti: lectura guiada, curso grupal o una mentoría más cercana.
+          </p>
+        </div>
+        <div>
+          <a class="btn" href="contacto.html">Ir a contacto</a>
         </div>
       </section>
     </main>

@@ -20,17 +20,19 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
     <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
 
     <header class="site-header container">
       <a href="#home" class="brand">EstudioBTC</a>
       <nav class="main-nav">
-        <a href="#home">Home</a>
+        <a href="#home" aria-current="page">Home</a>
         <a href="cursos-info.html">Cursos Info</a>
         <a href="sobre-mi.html">Sobre Mí</a>
         <a href="contacto.html">Contacto</a>
       </nav>
+      <a href="#inscripcion" class="btn btn-small header-cta">Agenda una llamada</a>
     </header>
 
     <aside class="btc-ticker" aria-live="polite">
@@ -43,22 +45,62 @@
       </p>
     </aside>
 
-    <main>
+    <main id="contenido">
       <section id="home" class="hero container reveal">
-        <p class="kicker">Mentoría de Bitcoin para principiantes</p>
-        <h1>Aprende Entiende y Cuida tu Bitcoin haciendo autocustodia</h1>
-        <p class="lead">
-          Comprende qué es Bitcoin y cómo funciona su ecosistema, adquiere las herramientas necesarias para operar con confianza y evitar fraudes.
-        </p>
-        <div class="hero-actions">
-          <a href="contacto.html" class="btn">Quiero empezar con EstudioBTC</a>
-          <a href="#precios" class="btn btn-outline">Ver precios claros</a>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">Mentoría de Bitcoin para principiantes</p>
+            <h1>Aprende, entiende y cuida tu Bitcoin haciendo autocustodia</h1>
+            <p class="lead">
+              Comprende qué es Bitcoin y cómo funciona su ecosistema. Gana criterio
+              para operar con calma, evitar fraudes y construir una autocustodia
+              que realmente puedas sostener.
+            </p>
+            <div class="hero-actions">
+              <a href="contacto.html" class="btn">Quiero empezar con EstudioBTC</a>
+              <a href="#precios" class="btn btn-outline">Ver precios claros</a>
+            </div>
+            <ul class="hero-badges">
+              <li>Apto 100% para principiantes</li>
+              <li>Reserva tu mentoría</li>
+              <li>Protege tus activos</li>
+            </ul>
+            <div class="hero-summary">
+              <article class="summary-card">
+                <strong>Aprendes desde cero</strong>
+                <span>Sin tecnicismos vacíos ni presión para comprar.</span>
+              </article>
+              <article class="summary-card">
+                <strong>Seguridad primero</strong>
+                <span>Buenas prácticas concretas antes de mover fondos.</span>
+              </article>
+              <article class="summary-card">
+                <strong>Ruta práctica</strong>
+                <span>Clases, artículos y protocolos para aplicar en tu caso.</span>
+              </article>
+            </div>
+          </div>
+          <aside class="hero-panel">
+            <p class="panel-kicker">Ruta recomendada</p>
+            <h2>Tu primer plan para entrar a Bitcoin sin ansiedad</h2>
+            <ol class="hero-steps">
+              <li>Entender qué es Bitcoin y qué no es.</li>
+              <li>Separar custodia real de saldo en plataformas.</li>
+              <li>Configurar hábitos de seguridad simples y repetibles.</li>
+              <li>Diseñar una autocustodia que puedas mantener en el tiempo.</li>
+            </ol>
+            <div class="hero-proof">
+              <div class="hero-proof-item">
+                <span>Modalidad</span>
+                <strong>Online, clara y guiada</strong>
+              </div>
+              <div class="hero-proof-item">
+                <span>Ideal si</span>
+                <strong>Quieres dejar de improvisar</strong>
+              </div>
+            </div>
+          </aside>
         </div>
-        <ul class="hero-badges">
-          <li>Apto 100% para principiantes</li>
-          <li>Reserva tu mentoría</li>
-          <li>Protege tus activos</li>
-        </ul>
       </section>
 
       <section class="security-banner container reveal">
@@ -91,7 +133,14 @@
       </section>
 
       <section class="trust container reveal">
-        <h2>Mi compromiso como mentor</h2>
+        <div class="section-head">
+          <p class="kicker">Compromiso</p>
+          <h2>Mi compromiso como mentor</h2>
+          <p class="muted-text">
+            El objetivo no es que dependas de mí, sino que entiendas lo que haces
+            y tomes decisiones con más autonomía.
+          </p>
+        </div>
         <div class="cards">
           <article class="card">
             <h3>Te acompaño en tu aprendizaje</h3>
@@ -250,6 +299,7 @@
               <li>Grabaciones por 6 meses</li>
               <li>Guía de conceptos base</li>
             </ul>
+            <a class="btn btn-outline btn-block" href="#inscripcion">Reservar lugar</a>
           </article>
           <article class="card price-card featured">
             <p class="tag">MÁS ELEGIDO</p>
@@ -261,6 +311,7 @@
               <li>Checklist de seguridad</li>
               <li>Sesión de Q&A en vivo</li>
             </ul>
+            <a class="btn btn-block" href="#inscripcion">Quiero esta ruta</a>
           </article>
           <article class="card price-card">
             <p class="price-title">Pack completo</p>
@@ -271,6 +322,7 @@
               <li>Soporte en comunidad privada</li>
               <li>Plantilla de plan familiar</li>
             </ul>
+            <a class="btn btn-outline btn-block" href="#inscripcion">Ver disponibilidad</a>
           </article>
         </div>
         <p class="pricing-note">
@@ -329,12 +381,32 @@
             Sin compromiso: primero conversamos tu nivel y objetivo. Si no te sirve
             ahora, te lo voy a decir con honestidad.
           </p>
+          <ul class="cta-list">
+            <li>Respuesta en menos de 24 horas hábiles.</li>
+            <li>Te recomiendo la opción que más sentido tenga para tu caso.</li>
+            <li>Sin spam, sin humo y sin presión para comprar.</li>
+          </ul>
         </div>
         <form class="signup-form">
           <label for="name">Nombre</label>
-          <input id="name" name="name" type="text" placeholder="Tu nombre" />
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Tu nombre"
+            autocomplete="name"
+            required
+          />
           <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="tu@email.com" />
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="tu@email.com"
+            autocomplete="email"
+            inputmode="email"
+            required
+          />
           <label for="course">Capacitación que te interesa</label>
           <select id="course" name="course">
             <option>Bitcoin Inicial</option>

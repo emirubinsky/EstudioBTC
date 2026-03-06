@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
     <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
 
@@ -29,38 +30,104 @@
         <a href="index.html#home">Home</a>
         <a href="cursos-info.html">Cursos Info</a>
         <a href="sobre-mi.html">Sobre Mí</a>
-        <a href="contacto.html">Contacto</a>
+        <a href="contacto.html" aria-current="page">Contacto</a>
       </nav>
+      <a href="#formulario" class="btn btn-small header-cta">Escribirme ahora</a>
     </header>
 
-    <main>
+    <main id="contenido">
       <section class="hero container reveal">
-        <p class="kicker">Contacto</p>
-        <h1>Hablemos y definimos tu mejor próximo paso</h1>
-        <p class="lead">
-          Esta sección queda lista para que agregues tus canales de contacto,
-          horarios de respuesta y el proceso para reservar una llamada.
-        </p>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">Contacto</p>
+            <h1>Hablemos y definimos tu mejor próximo paso</h1>
+            <p class="lead">
+              Si quieres empezar con Bitcoin desde una base segura o resolver si
+              hoy te conviene curso grupal o mentoría, escríbeme y te respondo con
+              claridad.
+            </p>
+            <div class="hero-actions">
+              <a href="#formulario" class="btn">Enviar consulta</a>
+              <a href="cursos-info.html" class="btn btn-outline">Ver cursos</a>
+            </div>
+          </div>
+          <aside class="hero-panel hero-panel-compact">
+            <p class="panel-kicker">Qué puedes esperar</p>
+            <ol class="hero-steps hero-steps-compact">
+              <li>Cuéntame tu punto de partida y tu duda principal.</li>
+              <li>Te respondo con la opción que mejor encaje contigo.</li>
+              <li>Si no es el momento adecuado, también te lo voy a decir.</li>
+            </ol>
+          </aside>
+        </div>
       </section>
 
-      <section class="cta container reveal">
-        <div>
-          <h2>Formulario de contacto</h2>
-          <p>
-            Puedes usar este bloque como base y luego personalizar campos,
-            instrucciones y canales de seguimiento.
-          </p>
+      <section id="formulario" class="contact-grid container reveal">
+        <div class="contact-panel">
+          <div class="section-head">
+            <p class="kicker">Proceso simple</p>
+            <h2>Antes de reservar, alineamos tu contexto</h2>
+            <p class="muted-text">
+              La idea no es venderte por vender. Primero entiendo tu nivel, tus
+              dudas y el tipo de acompañamiento que realmente necesitas.
+            </p>
+          </div>
+          <div class="contact-points">
+            <article class="card">
+              <h3>Respuesta humana</h3>
+              <p>Sin bots ni mensajes genéricos. Te contesto con contexto.</p>
+            </article>
+            <article class="card">
+              <h3>Enfoque honesto</h3>
+              <p>Si no te conviene empezar ahora, te lo digo con claridad.</p>
+            </article>
+          </div>
+          <ol class="contact-process">
+            <li>Me compartes tu objetivo, nivel y principal inquietud.</li>
+            <li>Te sugiero el curso o la modalidad más lógica para tu caso.</li>
+            <li>Coordinamos el siguiente paso sin presión ni urgencia artificial.</li>
+          </ol>
         </div>
-        <form class="signup-form">
-          <label for="name">Nombre</label>
-          <input id="name" name="name" type="text" placeholder="Tu nombre" />
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="tu@email.com" />
-          <label for="message">Mensaje</label>
-          <input id="message" name="message" type="text" placeholder="¿En qué te puedo ayudar?" />
-          <button type="submit" class="btn">Enviar consulta</button>
-          <small>Respuesta en menos de 24 horas hábiles.</small>
-        </form>
+        <div>
+          <div class="section-head">
+            <p class="kicker">Formulario</p>
+            <h2>Cuéntame en qué necesitas ayuda</h2>
+            <p class="muted-text">
+              Respuesta en menos de 24 horas hábiles. Nada de spam, nada de humo.
+            </p>
+          </div>
+          <form class="signup-form form-card">
+            <label for="name">Nombre</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Tu nombre"
+              autocomplete="name"
+              required
+            />
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="tu@email.com"
+              autocomplete="email"
+              inputmode="email"
+              required
+            />
+            <label for="message">Mensaje</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Cuéntame tu objetivo, tu nivel actual y qué te gustaría resolver."
+              required
+            ></textarea>
+            <button type="submit" class="btn">Enviar consulta</button>
+            <small>Respuesta en menos de 24 horas hábiles.</small>
+          </form>
+        </div>
       </section>
     </main>
 

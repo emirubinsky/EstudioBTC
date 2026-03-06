@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
     <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
 
@@ -27,33 +28,76 @@
       <a href="index.html#home" class="brand">EstudioBTC</a>
       <nav class="main-nav">
         <a href="index.html#home">Home</a>
-        <a href="cursos-info.html">Cursos Info</a>
+        <a href="cursos-info.html" aria-current="page">Cursos Info</a>
         <a href="sobre-mi.html">Sobre Mí</a>
         <a href="contacto.html">Contacto</a>
       </nav>
+      <a href="contacto.html" class="btn btn-small header-cta">Reservar curso</a>
     </header>
 
-    <main>
+    <main id="contenido">
       <section class="hero container reveal">
-        <p class="kicker">Curso Online</p>
-        <h1>INTRODUCCIÓN A LA ECONOMÍA BITCOIN</h1>
-        <p class="lead">
-          Comprende qué es Bitcoin y cómo funciona su ecosistema, y adquiere las
-          herramientas necesarias para operar con confianza y evitar fraudes.
-        </p>
-        <div class="hero-actions">
-          <a href="contacto.html" class="btn">Reserva Curso</a>
-          <a href="#programa" class="btn btn-outline">Ver programa completo</a>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">Curso Online</p>
+            <h1>Introducción a la economía Bitcoin</h1>
+            <p class="lead">
+              Comprende qué es Bitcoin y cómo funciona su ecosistema. Aprende a
+              moverte con más criterio, menos ruido y una base sólida para dar el
+              salto hacia la autocustodia.
+            </p>
+            <div class="hero-actions">
+              <a href="contacto.html" class="btn">Reserva Curso</a>
+              <a href="#programa" class="btn btn-outline">Ver programa completo</a>
+            </div>
+            <ul class="hero-badges">
+              <li>100% orientado a principiantes</li>
+              <li>Enfoque práctico y aplicable</li>
+              <li>Seguridad y autocustodia real</li>
+            </ul>
+          </div>
+          <aside class="hero-panel hero-panel-compact">
+            <p class="panel-kicker">Formato del curso</p>
+            <h2>Una base clara antes de tomar decisiones importantes</h2>
+            <div class="hero-proof">
+              <div class="hero-proof-item">
+                <span>Nivel</span>
+                <strong>Desde cero</strong>
+              </div>
+              <div class="hero-proof-item">
+                <span>Modalidad</span>
+                <strong>Online y guiado</strong>
+              </div>
+              <div class="hero-proof-item">
+                <span>Objetivo</span>
+                <strong>Entender antes de actuar</strong>
+              </div>
+              <div class="hero-proof-item">
+                <span>Enfoque</span>
+                <strong>Seguridad y criterio</strong>
+              </div>
+            </div>
+          </aside>
         </div>
-        <ul class="hero-badges">
-          <li>100% orientado a principiantes</li>
-          <li>Enfoque práctico y aplicable</li>
-          <li>Seguridad y autocustodia real</li>
-        </ul>
       </section>
 
       <section class="security-banner container reveal">
         <p>La mejor inversión que puedes hacer en Bitcoin es aprender sobre él.</p>
+      </section>
+
+      <section class="feature-band container reveal">
+        <article class="feature-band-item">
+          <span>4 clases en vivo</span>
+          <strong>Ordenadas y fáciles de seguir</strong>
+        </article>
+        <article class="feature-band-item">
+          <span>Grabaciones por 6 meses</span>
+          <strong>Para repasar a tu ritmo</strong>
+        </article>
+        <article class="feature-band-item">
+          <span>Material de apoyo</span>
+          <strong>Con foco práctico y anti-fraude</strong>
+        </article>
       </section>
 
       <section class="container reveal">
