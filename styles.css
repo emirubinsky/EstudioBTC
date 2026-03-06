@@ -574,25 +574,33 @@ section {
 .price-title {
   margin: 0;
   font-weight: 700;
-  color: #ffe7c1;
+  color: #f3dfba;
 }
 
 .price-value {
   margin: 0;
-  font-size: 1.95rem;
-  font-weight: 700;
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  font-size: clamp(1.45rem, 2vw, 1.7rem);
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #f2e5cb;
 }
 
 .price-value span {
-  font-size: 0.86rem;
-  color: var(--accent-2);
-  margin-left: 0.3rem;
+  font-size: 0.76rem;
+  color: #d9b776;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .price-normal {
   margin: 0;
-  color: var(--muted);
-  font-size: 0.92rem;
+  color: #9f957f;
+  font-size: 0.88rem;
 }
 
 .price-card ul {
