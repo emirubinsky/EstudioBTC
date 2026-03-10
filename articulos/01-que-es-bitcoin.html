@@ -15,28 +15,30 @@
         }
 
         .article-shell {
-            padding: 1.1rem 0 4.5rem;
+            padding: 1rem 0 5rem;
+        }
+
+        body::before {
+            display: none;
         }
 
         .article-frame {
+            --article-measure: 46rem;
+            --article-stage: 58rem;
+            --hero-stage: 40rem;
             position: relative;
             overflow: hidden;
-            border: 1px solid #3a2d1b;
-            border-radius: 34px;
+            border: 1px solid #2f2518;
+            border-radius: 40px;
             background:
-                radial-gradient(circle at top right, #f7931a12 0%, transparent 30%),
-                linear-gradient(180deg, #171510 0%, #110f0c 100%);
-            box-shadow: var(--shadow), 0 0 0 1px #ffffff06 inset;
+                radial-gradient(circle at top right, #f7931a16 0%, transparent 24%),
+                radial-gradient(circle at top left, #ffcf7008 0%, transparent 22%),
+                linear-gradient(180deg, #171510 0%, #100f0c 38%, #0d0c0a 100%);
+            box-shadow: var(--shadow);
         }
 
         .article-frame::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            background:
-                linear-gradient(180deg, #ffffff06, transparent 18%),
-                radial-gradient(circle at top left, #ffcf7012 0%, transparent 24%);
+            display: none;
         }
 
         .article-frame > * {
@@ -44,197 +46,391 @@
         }
 
         .article-hero {
-            padding: clamp(2.2rem, 5vw, 4rem);
-            border-bottom: 1px solid #2f2518;
+            position: relative;
+            padding: clamp(3rem, 7vw, 5.3rem) clamp(1.8rem, 5vw, 4.2rem) 0.45rem;
+        }
+
+        .article-hero::before {
+            content: "";
+            position: absolute;
+            right: -8rem;
+            top: -7rem;
+            width: 26rem;
+            height: 26rem;
+            border-radius: 50%;
+            border: 0;
+            background: radial-gradient(circle, #f7931a10 0%, transparent 68%);
+            opacity: 0.75;
+        }
+
+        .article-hero::after {
+            display: none;
         }
 
         .article-hero-grid {
             display: grid;
-            grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
-            gap: 1.4rem;
-            align-items: center;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 0;
+            justify-items: center;
+            text-align: center;
+            max-width: var(--hero-stage);
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
         }
 
         .article-hero-copy {
             min-width: 0;
+            width: 100%;
         }
 
         .article-hero h1 {
-            margin-bottom: 0.9rem;
-            max-width: 10ch;
-        }
-
-        .subtitle {
-            margin: 0;
-            color: #efe4cd;
-            font-size: clamp(1.05rem, 2vw, 1.25rem);
-            line-height: 1.6;
-            max-width: 28ch;
-        }
-
-        .intro {
-            margin: 0;
-            padding: 1.35rem 1.4rem;
-            border: 1px solid #5c4321;
-            border-radius: 26px;
-            background: linear-gradient(180deg, #22170d 0%, #17120d 100%);
-            color: #f4ead7;
-            line-height: 1.75;
-            box-shadow: 0 18px 38px #00000033, 0 0 0 1px #ffffff05 inset;
-        }
-
-        .intro strong {
-            color: #fff2d6;
+            margin-bottom: 0;
+            max-width: none;
+            font-size: clamp(2.3rem, 5.6vw, 4.3rem);
+            line-height: 0.96;
+            letter-spacing: -0.03em;
+            color: #fff4df;
         }
 
         .article-content {
-            padding: clamp(2rem, 4vw, 3rem);
+            padding: 0 clamp(1.4rem, 5vw, 4rem) clamp(3rem, 6vw, 4.5rem);
+        }
+
+        .article-body {
+            max-width: var(--article-stage);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .article-opening {
+            max-width: var(--article-measure);
+            margin: 0 auto;
+            display: grid;
+            gap: 1.15rem;
+            text-align: justify;
+        }
+
+        .article-opening p {
+            margin: 0;
+            color: #ddd1bc;
+            line-height: 1.95;
+            font-size: 1.07rem;
+        }
+
+        .article-body > h2,
+        .article-body > p,
+        .quote,
+        .analogy,
+        .article-outro {
+            max-width: var(--article-measure);
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .article-content h2 {
-            position: relative;
-            margin: 0 0 1.1rem;
-            padding-bottom: 0.9rem;
-            color: #f5ede0;
+            margin: 0 auto 1.1rem;
+            padding-top: 3.4rem;
+            color: #f7edde;
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -0.02em;
+            border-top: 1px solid #2b2318;
         }
 
-        .article-content h2:not(:first-child) {
-            margin-top: 3.3rem;
+        .article-content h2:first-child {
+            padding-top: 0;
+            border-top: 0;
         }
 
-        .article-content h2::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 74px;
-            height: 3px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        .article-content .section-heading-compact {
+            margin-top: 1.55rem;
+            padding-top: 2.75rem;
+            font-size: clamp(1.65rem, 3vw, 2.25rem);
+            text-align: center;
+        }
+
+        .article-content .section-heading-spacious {
+            padding-top: 3.8rem;
+        }
+
+        .article-content .section-heading-separated {
+            padding-top: 4.6rem;
+        }
+
+        .article-content .section-heading-no-rule {
+            border-top: 0;
+        }
+
+        .article-content .section-intro {
+            width: max-content;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            color: #cfc2aa;
+            white-space: nowrap;
         }
 
         .article-content p {
             margin: 0;
-            color: #d8cfbd;
-            line-height: 1.8;
-            font-size: 1.03rem;
+            color: #d7ccb9;
+            line-height: 1.9;
+            font-size: 1.06rem;
         }
 
-        .article-content > p + p,
-        .article-content > p + .concept,
-        .article-content > p + .pillars,
-        .article-content > p + .analogy,
-        .article-content > p + .quote {
-            margin-top: 1rem;
+        .article-body > p + p {
+            margin-top: 1.1rem;
+        }
+
+        .article-body > p + .concept,
+        .article-body > p + .pillars,
+        .article-body > p + .analogy,
+        .article-body > p + .quote {
+            margin-top: 1.8rem;
+        }
+
+        .article-opening + .concept {
+            margin-top: 4.35rem;
         }
 
         .article-content strong {
             color: #fff1d1;
         }
 
+        .concept,
+        .pillars {
+            max-width: var(--article-measure);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-intro + .value-grid {
+            margin-top: 3.2rem;
+        }
+
+        .section-intro + .pillars.pillars-spaced {
+            margin-top: 3.2rem;
+        }
+
         .concept {
-            margin: 1rem 0 0;
-            padding: 1.35rem 1.4rem;
-            border: 1px solid #31281d;
-            border-radius: 24px;
-            background: linear-gradient(180deg, #1b1812 0%, #13110d 100%);
-            box-shadow: 0 14px 30px #0000001f;
-            transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+            display: grid;
+            grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+            gap: 1.5rem;
+            align-items: start;
+            margin-top: 1.55rem;
+            padding: 1.7rem 0 0;
+            border: 0;
+            border-top: 1px solid #2c2418;
+            border-radius: 0;
+            background: none;
+            box-shadow: none;
+        }
+
+        .article-content h2 + .concept {
+            margin-top: 0.65rem;
+            padding-top: 0.2rem;
+            border-top: 0;
+        }
+
+        .article-content .section-heading-separated + .concept {
+            margin-top: 2.6rem;
+            padding-top: 1.7rem;
+            border-top: 1px solid #2c2418;
         }
 
         .concept:hover {
-            transform: translateY(-3px);
-            border-color: #6a4f28;
-            box-shadow: 0 18px 36px #00000030;
+            transform: none;
+            border-color: #2c2418;
+            box-shadow: none;
         }
 
         .concept h3,
         .analogy h3 {
-            color: #ffe0a6;
-            margin-bottom: 0.7rem;
-            font-size: 1.35rem;
+            margin: 0;
+            color: #f0d8a8;
+        }
+
+        .concept h3 {
+            font-size: 1.14rem;
+            line-height: 1.25;
         }
 
         .highlight {
-            padding: 0.15rem 0.55rem;
-            border-radius: 999px;
-            background: linear-gradient(135deg, #ffcf70, #f7931a);
-            color: #1d1105;
+            padding: 0 0.08rem;
+            border-radius: 0.16rem;
+            background: none;
+            box-shadow: inset 0 -0.48em 0 #f7931a30;
+            color: #ffe2ab;
             font-weight: 700;
         }
 
+        .value-grid {
+            list-style: none;
+            max-width: var(--article-measure);
+            margin: 1.7rem auto 0;
+            padding: 0;
+            border-top: 1px solid #2c2418;
+        }
+
+        .value-grid li {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            gap: 0.35rem 1rem;
+            align-items: start;
+            padding: 1rem 0;
+            border-bottom: 1px solid #2c2418;
+        }
+
+        .value-grid li::before {
+            content: "✓";
+            display: grid;
+            place-items: center;
+            width: 1.6rem;
+            height: 1.6rem;
+            margin-top: 0.1rem;
+            border-radius: 999px;
+            background: #1d1711;
+            border: 1px solid #5a411f;
+            color: #f3d294;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .value-grid strong {
+            display: block;
+            margin-bottom: 0.18rem;
+            color: #fff1d1;
+            font-size: 1rem;
+        }
+
+        .value-grid span {
+            display: block;
+            color: #cabda7;
+            line-height: 1.75;
+        }
+
         .quote {
-            margin: 1.8rem 0 0;
-            padding: 1.35rem 1.5rem;
-            border: 1px solid #5b421d;
-            border-radius: 24px;
-            background:
-                radial-gradient(circle at top right, #f7931a1f 0%, transparent 35%),
-                linear-gradient(180deg, #1d150e 0%, #14110d 100%);
-            color: #f7ecd9;
-            font-family: "DM Serif Display", serif;
-            font-size: clamp(1.2rem, 2.2vw, 1.55rem);
-            line-height: 1.45;
+            position: relative;
+            margin-top: 2.3rem;
+            padding: 0 0 0 1.25rem;
+            border: 0;
+            background: none;
+            color: #e7d8bc;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+            font-weight: 500;
+            line-height: 1.85;
+            letter-spacing: 0.01em;
+        }
+
+        .quote::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.28rem;
+            width: 2px;
+            height: calc(100% - 0.55rem);
+            border-radius: 999px;
+            background: linear-gradient(180deg, var(--accent), transparent);
+            opacity: 0.95;
         }
 
         .pillars {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.3rem 1.6rem;
+            margin-top: 1.6rem;
+        }
+
+        .pillars + .section-heading-separated {
+            margin-top: 0.9rem;
+            padding-top: 3.05rem;
         }
 
         .pillar {
-            padding: 1.25rem 1.2rem 1.3rem;
-            border: 1px solid #32281d;
-            border-radius: 24px;
-            background: linear-gradient(180deg, #1b1914 0%, #14120e 100%);
-            box-shadow: 0 12px 28px #00000020;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 1rem;
+            row-gap: 0.2rem;
+            align-items: start;
+            padding: 0.15rem 0;
+            border: 0;
+            border-radius: 0;
+            background: none;
+            box-shadow: none;
         }
 
         .pillar-icon {
-            width: 3rem;
-            height: 3rem;
+            width: 2.6rem;
+            height: 2.6rem;
             display: grid;
             place-items: center;
-            margin-bottom: 0.95rem;
-            font-size: 1.45rem;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #f7931a1f, #ffcf7015);
-            border: 1px solid #4d391d;
+            margin: 0;
+            font-size: 1.2rem;
+            border-radius: 12px;
+            background: #1d1711;
+            border: 1px solid #49351a;
+            grid-row: 1 / span 2;
         }
 
         .pillar h4 {
-            color: #f7ebd4;
-            margin-bottom: 0.45rem;
-            font-size: 1.12rem;
+            margin: 0;
+            color: #f5e8d0;
+            font-size: 1.06rem;
+        }
+
+        .pillar p {
+            color: #cfc3ae;
         }
 
         .analogy {
-            margin-top: 1.6rem;
-            padding: 1.6rem;
-            border: 1px solid #5c4321;
-            border-radius: 28px;
-            background:
-                radial-gradient(circle at top right, #f7931a20 0%, transparent 34%),
-                linear-gradient(160deg, #24190f 0%, #16110c 100%);
-            box-shadow: 0 18px 40px #00000028;
+            position: relative;
+            margin-top: 3rem;
+            padding: 1.9rem 0 0;
+            border: 0;
+            background: none;
+            box-shadow: none;
+            border-top: 1px solid #4a361b;
+        }
+
+        .analogy::before {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 9rem;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+
+        .analogy h3 {
+            margin-bottom: 0.8rem;
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(1.6rem, 3vw, 2rem);
+            color: #fff1d0;
         }
 
         .article-outro {
-            margin-top: 2rem;
-            border-color: #4c3921;
-            background:
-                radial-gradient(circle at top right, #f7931a14 0%, transparent 36%),
-                linear-gradient(180deg, #191510 0%, #12100d 100%);
+            margin-top: 3rem;
+            padding: 1.6rem 0 0;
+            border: 0;
+            background: none;
+            box-shadow: none;
         }
 
-        @media (max-width: 820px) {
-            .article-hero-grid {
+        .article-outro strong {
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        @media (max-width: 900px) {
+            .article-hero-grid,
+            .concept,
+            .pillars {
                 grid-template-columns: 1fr;
             }
 
-            .subtitle {
+            .article-hero-copy {
                 max-width: none;
             }
         }
@@ -245,7 +441,7 @@
             }
 
             .article-frame {
-                border-radius: 24px;
+                border-radius: 28px;
             }
 
             .article-hero,
@@ -254,12 +450,18 @@
                 padding-right: 1rem;
             }
 
-            .quote,
-            .concept,
-            .analogy,
-            .intro {
-                padding-left: 1.15rem;
-                padding-right: 1.15rem;
+            .quote {
+                padding-left: 1.6rem;
+                font-size: 1.5rem;
+            }
+
+            .quote::before {
+                font-size: 3.6rem;
+            }
+
+            .article-content .section-intro {
+                width: auto;
+                white-space: normal;
             }
         }
     </style>
@@ -273,7 +475,7 @@
         <a href="../index.html" class="brand">EstudioBTC</a>
         <nav class="main-nav">
             <a href="../index.html#articulos" aria-current="page">Artículos</a>
-            <a href="../cursos-info.html">Cursos Info</a>
+            <a href="../cursos-info.html">Capacitaciones</a>
             <a href="../sobre-mi.html">Sobre Mí</a>
             <a href="../contacto.html">Contacto</a>
         </nav>
@@ -286,172 +488,151 @@
                 <div class="article-hero-grid">
                     <div class="article-hero-copy">
                         <h1>¿Qué es Bitcoin?</h1>
-                        <p class="subtitle">Una red descentralizada de confianza matemática</p>
-                    </div>
-                    <div class="intro">
-                        Bitcoin no es solo dinero digital. Bitcoin es una <strong>revolución en cómo coordinamos valor y confianza</strong> sin depender de autoridades centrales. Es la primera vez en la historia que podemos transferir valor por internet de manera nativa, sin intermediarios.
                     </div>
                 </div>
             </section>
 
             <div class="article-content">
+            <div class="article-body">
 
-            <h2>La Esencia de Bitcoin</h2>
-            <p>Bitcoin resuelve un problema fundamental que ha existido desde el inicio de internet: <span class="highlight">¿Cómo podemos confiar en un sistema sin confiar en ninguna entidad específica?</span></p>
-            
-            <p>Antes de Bitcoin, todo dinero digital requería un intermediario de confianza: un banco, una empresa de pagos, o un gobierno. Bitcoin cambia esto radicalmente al crear un sistema donde la confianza emerge del consenso matemático y criptográfico, no de instituciones centralizadas.</p>
+            <div class="article-opening">
+                <p>Bitcoin resuelve dos problemas fundamentales. En primer lugar, es un sistema monetario de efectivo digital, de persona a persona. Esto significa que se pueden realizar transferencias entre personas sin necesidad de confiar en otro, es decir, resuelve el <strong>problema del tercero de confianza</strong>. Antes de Bitcoin, para usar dinero digital hacía falta un intermediario: un banco, una tarjeta, una fintech o una empresa de pagos.</p>
+
+                <p>En cuanto al <strong>problema del doble gasto</strong>, Bitcoin evita que una misma unidad de dinero digital sea gastada más de una vez. Antes de Bitcoin, la forma habitual de resolverlo era que una empresa o institución llevara un registro central y dijera cuál pago era válido y cuál no. Bitcoin usa una red distribuida que comparte un historial común de transacciones y aplica reglas de consenso para que una misma unidad no pueda gastarse dos veces.</p>
+            </div>
 
             <div class="concept">
                 <h3>Una Red de Consenso</h3>
-                <p>Bitcoin es una red peer-to-peer donde miles de computadoras (nodos) alrededor del mundo mantienen una copia idéntica de un libro contable público (la blockchain). No hay un servidor central que pueda ser apagado, censurado o controlado. Cada participante verifica independientemente todas las transacciones según reglas matemáticas predefinidas.</p>
+                <p>Bitcoin es una red peer-to-peer donde miles de nodos alrededor del mundo mantienen una copia del historial de transacciones. No hay un servidor central: cada participante verifica las reglas por su cuenta y acepta solo las transacciones válidas.</p>
             </div>
 
             <div class="concept">
                 <h3>Escasez Digital Verificable</h3>
-                <p>Por primera vez en la historia digital, tenemos algo verdaderamente escaso. Solo existirán <strong>21 millones de bitcoins</strong>, y esta regla está protegida por matemáticas y consenso distribuido, no por la promesa de un gobierno o banco central. La emisión es predecible y transparente, reduciéndose a la mitad aproximadamente cada 4 años (evento conocido como "halving").</p>
+                <p>Solo existirán <strong>21 millones de bitcoins</strong>. Esa regla no depende de una promesa política ni empresarial: está escrita en el protocolo y es verificada por la propia red.</p>
             </div>
 
             <div class="concept">
                 <h3>Criptografía de Clave Pública</h3>
-                <p>Bitcoin utiliza criptografía asimétrica: tienes una clave privada (como una contraseña ultra-segura que nunca compartes) y una clave pública (como tu número de cuenta que puedes compartir libremente). Solo quien posee la clave privada puede gastar los bitcoins asociados a esa dirección.</p>
+                <p>Cada usuario tiene una clave privada, que nunca debe compartir, y direcciones públicas que sí puede usar para recibir fondos. Quien controla la clave privada controla el acceso a esos bitcoins.</p>
             </div>
 
             <div class="concept">
                 <h3>Prueba de Trabajo (Proof of Work)</h3>
-                <p>Los mineros compiten resolviendo complejos problemas matemáticos para agregar nuevos bloques de transacciones a la blockchain. Este proceso consume energía intencionalmente, haciendo que atacar la red sea extremadamente costoso y asegurando que ningún actor malicioso pueda reescribir el historial de transacciones.</p>
+                <p>La minería ordena transacciones en bloques y hace costoso alterar el historial. Ese gasto real de energía y cómputo es parte de lo que protege a la red frente a ataques.</p>
             </div>
 
-            <div class="concept">
-                <h3>Dinero Programable</h3>
-                <p>Bitcoin es dinero que puede ser programado con reglas matemáticas. Puedes crear transacciones que solo se ejecuten bajo ciertas condiciones, sistemas de múltiples firmas (multisig), o construir aplicaciones financieras complejas encima de él.</p>
-            </div>
-
-            <div class="concept">
-                <h3>Resistencia a la Censura</h3>
-                <p>Debido a su naturaleza descentralizada, ningún gobierno, banco o entidad puede detener, censurar o revertir transacciones de Bitcoin. Una vez confirmada en la blockchain, una transacción es prácticamente inmutable.</p>
-            </div>
-
-            <div class="quote">
-                "Bitcoin representa la separación del dinero y el Estado, de la misma manera que nuestros antepasados lograron la separación de la Iglesia y el Estado."
-            </div>
-
-            <h2>Los Pilares Fundamentales</h2>
-            <div class="pillars">
+            <h2 class="section-heading-compact section-heading-spacious">Ideas Clave para Entenderlo</h2>
+            <p class="section-intro">Si tuvieras que quedarte con pocas ideas, estas son las más importantes:</p>
+            <div class="pillars pillars-spaced">
                 <div class="pillar">
                     <div class="pillar-icon">🌐</div>
                     <h4>Descentralización</h4>
-                    <p>No hay un punto único de fallo. El poder está distribuido entre todos los participantes de la red, sin jerarquías.</p>
+                    <p>No depende de una sola empresa, un solo banco o un solo gobierno.</p>
                 </div>
 
                 <div class="pillar">
                     <div class="pillar-icon">🔓</div>
-                    <h4>Open Source</h4>
-                    <p>El código es público y auditable. Cualquiera puede verificar que las reglas se cumplan y proponer mejoras.</p>
-                </div>
-
-                <div class="pillar">
-                    <div class="pillar-icon">🛡️</div>
-                    <h4>Seguridad Criptográfica</h4>
-                    <p>Tu dinero está protegido por las mismas matemáticas que aseguran las comunicaciones militares y bancarias.</p>
+                    <h4>Reglas Abiertas</h4>
+                    <p>El código y las reglas del sistema pueden auditarse públicamente.</p>
                 </div>
 
                 <div class="pillar">
                     <div class="pillar-icon">⚖️</div>
                     <h4>Sin Permisos</h4>
-                    <p>Nadie puede prohibirte usar Bitcoin. No necesitas permiso de un banco o gobierno para participar.</p>
+                    <p>Cualquier persona con internet puede usar Bitcoin sin pedir autorización.</p>
                 </div>
 
                 <div class="pillar">
                     <div class="pillar-icon">🔄</div>
                     <h4>Inmutabilidad</h4>
-                    <p>Una vez confirmadas, las transacciones no pueden ser revertidas o alteradas sin el consenso de la mayoría de la red.</p>
-                </div>
-
-                <div class="pillar">
-                    <div class="pillar-icon">👁️</div>
-                    <h4>Transparencia</h4>
-                    <p>Todas las transacciones son públicas y verificables en la blockchain. El sistema opera con total transparencia.</p>
+                    <p>Revertir transacciones confirmadas es extremadamente costoso para un atacante.</p>
                 </div>
 
                 <div class="pillar">
                     <div class="pillar-icon">🔢</div>
-                    <h4>Divisibilidad</h4>
-                    <p>Cada bitcoin puede dividirse en 100 millones de unidades llamadas "satoshis", permitiendo micropagos y flexibilidad.</p>
-                </div>
-
-                <div class="pillar">
-                    <div class="pillar-icon">✈️</div>
-                    <h4>Portabilidad Global</h4>
-                    <p>Puedes llevar cualquier cantidad de bitcoins cruzando fronteras simplemente memorizando 12 o 24 palabras.</p>
+                    <h4>Portabilidad y Divisibilidad</h4>
+                    <p>Puede fraccionarse en satoshis y moverse globalmente con facilidad.</p>
                 </div>
             </div>
 
-            <h2>¿Cómo Funciona Bitcoin?</h2>
+            <h2 class="section-heading-compact section-heading-separated section-heading-no-rule">¿Cómo Funciona Bitcoin?</h2>
             
             <div class="concept">
                 <h3>La Blockchain</h3>
-                <p>La blockchain es un libro contable público distribuido que registra todas las transacciones de Bitcoin. Cada "bloque" contiene un conjunto de transacciones y está vinculado criptográficamente al bloque anterior, formando una cadena inmutable. Un nuevo bloque se agrega aproximadamente cada 10 minutos.</p>
+                <p>La blockchain es un historial compartido de transacciones. Cada bloque agrupa operaciones recientes y queda enlazado al bloque anterior, formando un registro común que la red puede auditar.</p>
             </div>
 
             <div class="concept">
                 <h3>Wallets y Llaves</h3>
-                <p>Una wallet (billetera) de Bitcoin no guarda monedas físicamente, sino las claves criptográficas que te permiten acceder y gastar tus bitcoins en la blockchain. Tu clave privada es como la firma digital que autoriza transacciones; tu clave pública/dirección es donde otros pueden enviarte bitcoins.</p>
+                <p>Una wallet no guarda bitcoins "adentro", sino las llaves que te permiten moverlos en la red. Tu clave privada firma transacciones; tu dirección pública sirve para recibir fondos.</p>
             </div>
 
             <div class="concept">
-                <h3>Las Transacciones</h3>
-                <p>Cuando envías bitcoins, creas una transacción firmada digitalmente con tu clave privada. Esta transacción se transmite a la red peer-to-peer, donde los nodos la verifican. Los mineros la incluyen en un bloque, y una vez confirmada en la blockchain, es prácticamente irreversible.</p>
+                <h3>Transacciones y Confirmaciones</h3>
+                <p>Cuando envías bitcoins, firmas una transacción con tu clave privada y la difundes a la red. Los nodos la verifican, los mineros la incluyen en un bloque y, con las confirmaciones, esa transacción gana seguridad.</p>
             </div>
 
             <div class="concept">
-                <h3>La Red Lightning</h3>
-                <p>Para pagos instantáneos y de bajo costo, existe Lightning Network: una segunda capa sobre Bitcoin que permite millones de transacciones por segundo fuera de la blockchain principal, liquidando periódicamente en la cadena base.</p>
+                <h3>Lightning Network</h3>
+                <p>Para pagos más rápidos y baratos existe Lightning, una capa construida sobre Bitcoin que permite operar fuera de la cadena principal y liquidar después en la red base.</p>
             </div>
 
-            <h2>¿Por Qué Importa Bitcoin?</h2>
+            <h2 class="section-heading-compact section-heading-separated">¿Por Qué Importa Bitcoin?</h2>
             
-            <div class="concept">
-                <h3>Inclusión Financiera</h3>
-                <p>Más de 2 mil millones de personas no tienen acceso a servicios bancarios. Con Bitcoin, solo necesitas un teléfono con internet para participar en la economía global, sin necesidad de documentación, historial crediticio o aprobación de terceros.</p>
-            </div>
-
             <div class="concept">
                 <h3>Soberanía Individual</h3>
-                <p>Con Bitcoin, tú eres tu propio banco. Nadie puede congelar tus fondos, bloquear tus transacciones o confiscar tu dinero arbitrariamente. Tienes control absoluto sobre tu riqueza.</p>
+                <p>Bitcoin te permite tener y mover valor sin depender por completo de terceros. Esa posibilidad implica más responsabilidad, pero también más control.</p>
             </div>
 
             <div class="concept">
-                <h3>Protección Contra la Inflación</h3>
-                <p>A diferencia de las monedas fiduciarias que pueden imprimirse sin límite, Bitcoin tiene un suministro fijo de 21 millones. Esta escasez programada lo convierte en una reserva de valor resistente a la devaluación monetaria causada por políticas inflacionarias.</p>
+                <h3>Reglas Monetarias Claras</h3>
+                <p>Su emisión es predecible y limitada. Eso lo diferencia del dinero fiduciario, donde la oferta puede expandirse por decisión política o institucional.</p>
             </div>
 
             <div class="concept">
-                <h3>Innovación Sin Permiso</h3>
-                <p>Como internet permitió la innovación sin pedir permiso a las compañías telefónicas, Bitcoin permite la innovación financiera sin pedir permiso a los bancos. Cualquier desarrollador puede construir aplicaciones sobre Bitcoin.</p>
+                <h3>Acceso Global</h3>
+                <p>Con conexión a internet, cualquier persona puede participar, recibir pagos o ahorrar en Bitcoin sin depender de la infraestructura bancaria tradicional.</p>
             </div>
 
-            <div class="analogy">
-                <h3>Una Analogía Poderosa</h3>
-                <p>Piensa en Bitcoin como el internet del dinero. Así como internet democratizó la información y la comunicación, Bitcoin democratiza el dinero y el valor. No necesitas permiso para enviar un email; con Bitcoin, no necesitas permiso para enviar valor.</p>
-            </div>
+            <h2 class="section-heading-compact">Más Allá del Precio</h2>
+            <p class="section-intro">Bitcoin no se trata solo del precio o de "hacerse rico rápido". También se trata de:</p>
 
-            <h2>Más Allá del Precio</h2>
-            <p>Bitcoin no se trata del precio o de "hacerse rico rápido". Se trata de:</p>
-            
-            <div class="concept">
-                <p><strong>✓ Libertad financiera</strong> - Control total sobre tu dinero<br>
-                <strong>✓ Privacidad</strong> - Transacciones sin vigilancia masiva<br>
-                <strong>✓ Neutralidad</strong> - Un sistema que no discrimina<br>
-                <strong>✓ Transparencia</strong> - Reglas claras que todos pueden verificar<br>
-                <strong>✓ Resistencia a la censura</strong> - Nadie puede detener la red</p>
-            </div>
-
-            <div class="quote">
-                "Bitcoin no es solo tecnología, no es solo economía. Bitcoin es una conversación sobre el futuro de nuestra sociedad, sobre cómo nos organizamos, sobre quién tiene el poder y cómo ese poder puede ser distribuido de manera más equitativa."
-            </div>
+            <ul class="value-grid">
+                <li>
+                    <div>
+                        <strong>Libertad financiera</strong>
+                        <span>Control total sobre tu dinero.</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Privacidad</strong>
+                        <span>Transacciones sin vigilancia masiva.</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Neutralidad</strong>
+                        <span>Un sistema que no discrimina.</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Transparencia</strong>
+                        <span>Reglas claras que todos pueden verificar.</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Resistencia a la censura</strong>
+                        <span>Nadie puede detener la red.</span>
+                    </div>
+                </li>
+            </ul>
 
             <div class="intro article-outro">
-                <strong>El viaje de aprender Bitcoin no termina aquí.</strong> Es un sistema complejo pero elegante que recompensa la curiosidad y el estudio. Cada capa que descubres revela más profundidad, más ingeniería brillante, más posibilidades para el futuro.
+                <strong>Aprender Bitcoin no termina aquí.</strong> Al principio no hace falta memorizar todo: alcanza con entender qué problema resuelve, cómo funciona su seguridad y qué responsabilidades implica usarlo.
+            </div>
             </div>
             </div>
         </article>

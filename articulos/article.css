@@ -6,6 +6,7 @@
   --line: #373224;
   --accent: #f7931a;
   --accent-soft: #ffd58b;
+  --article-measure: 46rem;
 }
 
 * {
@@ -21,7 +22,7 @@ body {
 }
 
 .container {
-  width: min(860px, 92%);
+  width: min(1100px, 92%);
   margin-inline: auto;
 }
 
@@ -43,7 +44,13 @@ main {
   background: linear-gradient(165deg, var(--panel), #14120d);
   border: 1px solid var(--line);
   border-radius: 18px;
-  padding: 1.2rem;
+  padding: clamp(1.2rem, 4vw, 2rem);
+}
+
+.article > * {
+  max-width: var(--article-measure);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1,

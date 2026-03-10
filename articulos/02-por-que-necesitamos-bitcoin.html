@@ -1,147 +1,402 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Por qué necesitamos Bitcoin | EstudioBTC</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="article.css" />
-  </head>
-  <body>
-    <div class="container topbar"><a href="../index.html#articulos">← Volver a EstudioBTC</a></div>
-    <main class="container">
-      <article class="article">
-        <p class="meta">Nivel 1 · Lectura 10 min</p>
-        <h1>Por qué necesitamos Bitcoin</h1>
-        <p class="lead">
-          Bitcoin no aparece como una innovación tecnológica más. Aparece como
-          respuesta a un problema estructural del sistema monetario moderno.
-        </p>
-        <p>
-          Para entender por qué Bitcoin es necesario, primero hay que mirar qué es
-          el dinero, qué función cumple y en qué momento empezó a fallar.
-        </p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Por qué necesitamos Bitcoin? | EstudioBTC</title>
+    <meta name="description" content="Una explicación simple sobre por qué Bitcoin es necesario: dinero, inflación, 1971 y reglas monetarias fijas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .article-header {
+            margin-bottom: 1rem;
+        }
 
-        <h2>1. El dinero no es riqueza</h2>
-        <p>
-          El dinero no es riqueza en sí misma: es una herramienta de coordinación
-          social. Funciona como medio de intercambio, unidad de cuenta y reserva de
-          valor.
-        </p>
-        <p>
-          Cuando estas tres funciones están sanas, las personas pueden ahorrar,
-          invertir y planificar con cierta previsibilidad. El problema empieza
-          cuando la función de reserva de valor se deteriora: ahí se distorsionan
-          los incentivos de todo el sistema.
-        </p>
+        .article-shell {
+            padding: 1rem 0 5rem;
+        }
 
-        <h2>2. El punto de quiebre: 1971</h2>
-        <p>
-          Durante buena parte del siglo XX, el orden monetario internacional estuvo
-          ligado al oro mediante el sistema de Bretton Woods. El dólar era
-          convertible en oro y muchas monedas, a su vez, estaban ancladas al dólar.
-          Eso imponía un límite real: no se podía expandir dinero sin respaldo de
-          manera ilimitada.
-        </p>
-        <p>
-          Ese límite se rompió en 1971, cuando Richard Nixon suspendió
-          unilateralmente la convertibilidad del dólar en oro (Nixon Shock). Desde
-          entonces, el mundo opera con dinero fiduciario puro: sin respaldo físico
-          y sin un límite duro de emisión.
-        </p>
+        body::before {
+            display: none;
+        }
 
-        <h2>3. El dinero sin límite cambia los incentivos</h2>
-        <p>
-          Si el dinero puede emitirse sin restricción estructural, cambian los
-          comportamientos de fondo:
-        </p>
-        <ul>
-          <li>Los gobiernos pueden financiar déficits sin subir impuestos de forma directa.</li>
-          <li>Los bancos centrales amplían base monetaria ante cada crisis.</li>
-          <li>El ahorro pierde poder adquisitivo con el tiempo.</li>
-          <li>Se incentiva la deuda y se castiga la prudencia financiera.</li>
-        </ul>
-        <p>
-          No es un accidente técnico, es la lógica del diseño actual. La expansión
-          monetaria permanente no siempre se percibe en el corto plazo, pero su
-          efecto acumulativo termina siendo profundamente distorsivo.
-        </p>
+        .article-frame {
+            --article-measure: 46rem;
+            --article-stage: 58rem;
+            --hero-stage: 52rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #2f2518;
+            border-radius: 40px;
+            background:
+                radial-gradient(circle at top right, #f7931a16 0%, transparent 24%),
+                radial-gradient(circle at top left, #ffcf7008 0%, transparent 22%),
+                linear-gradient(180deg, #171510 0%, #100f0c 38%, #0d0c0a 100%);
+            box-shadow: var(--shadow);
+        }
 
-        <h2>4. El problema de fondo: confianza obligatoria</h2>
-        <p>
-          El sistema fiat exige confiar en bancos centrales, gobiernos, política
-          monetaria futura y estabilidad política. La pregunta de fondo es simple:
-          ¿debería el dinero depender de decisiones políticas?
-        </p>
-        <p>
-          Durante siglos, el oro funcionó como límite natural porque nadie podía
-          producirlo arbitrariamente. Con el dinero fiduciario, ese freno
-          desapareció y con él también desapareció el límite duro.
-        </p>
+        .article-frame::before {
+            display: none;
+        }
 
-        <h2>5. Bitcoin introduce algo radicalmente distinto</h2>
-        <p>
-          Bitcoin no busca "parchar" el sistema actual: cambia la premisa. Por
-          primera vez existe un activo monetario digital con reglas de emisión
-          predefinidas y verificables por cualquiera.
-        </p>
-        <ul>
-          <li>No depende de una autoridad central.</li>
-          <li>No puede alterarse por decisión política.</li>
-          <li>Opera con reglas matemáticas transparentes.</li>
-          <li>Tiene un suministro máximo de 21 millones.</li>
-        </ul>
-        <p>
-          En otras palabras, no te pide confianza ciega en una institución: te pide
-          verificación.
-        </p>
+        .article-frame > * {
+            position: relative;
+        }
 
-        <h2>6. ¿Por qué es necesario?</h2>
-        <p>
-          Porque el dinero no es neutral. El tipo de dinero que usamos modifica
-          cómo ahorramos, cómo invertimos, cómo nos endeudamos y cómo se organiza
-          toda la economía.
-        </p>
-        <p>
-          Un sistema basado en expansión infinita genera incentivos distintos de
-          uno basado en escasez verificable. Bitcoin no promete una estabilidad
-          perfecta, pero sí elimina la discrecionalidad monetaria. Y eso, por sí
-          solo, es un cambio estructural.
-        </p>
+        .article-hero {
+            position: relative;
+            padding: clamp(3rem, 7vw, 5.3rem) clamp(1.8rem, 5vw, 4.2rem) 2.8rem;
+        }
 
-        <h2>7. No es una cuestión de precio</h2>
-        <p>
-          Bitcoin no es relevante por su cotización diaria, sino porque introduce
-          competencia al monopolio de emisión. Por primera vez, cualquier persona
-          puede optar por un sistema monetario alternativo sin pedir permiso.
-        </p>
-        <p>
-          No es una mejora incremental: es una innovación de base.
-        </p>
+        .article-hero::before {
+            content: "";
+            position: absolute;
+            right: -7rem;
+            top: -6rem;
+            width: 24rem;
+            height: 24rem;
+            border-radius: 50%;
+            border: 0;
+            background: radial-gradient(circle, #f7931a10 0%, transparent 68%);
+            opacity: 0.75;
+        }
 
-        <h2>Conclusión</h2>
-        <p>
-          Bitcoin no surge porque el sistema actual sea apenas imperfecto. Surge
-          porque el sistema actual depende de confianza política y expansión
-          permanente.
-        </p>
-        <p>
-          Frente a eso, Bitcoin propone reglas en lugar de decisiones, escasez
-          verificable en lugar de promesas y soberanía individual en lugar de
-          intermediación obligatoria.
-        </p>
-        <p>
-          La pregunta ya no es si Bitcoin es necesario. La pregunta es cuánto
-          tiempo llevará que más personas entiendan por qué.
-        </p>
+        .article-hero::after {
+            display: none;
+        }
 
-        <p class="next">Siguiente lectura: <a href="03-comprar-vs-tener-bitcoin.html">La diferencia entre comprar Bitcoin y tener Bitcoin</a></p>
-      </article>
+        .article-hero-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: clamp(2rem, 5vw, 3.5rem);
+            align-items: end;
+            max-width: var(--hero-stage);
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+        }
+
+        .article-hero-copy {
+            min-width: 0;
+            width: 100%;
+        }
+
+        .article-hero h1 {
+            margin-bottom: 1rem;
+            max-width: 9ch;
+            font-size: clamp(3rem, 8vw, 5.4rem);
+            line-height: 0.94;
+            letter-spacing: -0.03em;
+            color: #fff4df;
+        }
+
+        .subtitle {
+            margin: 0;
+            color: #f0e6d5;
+            font-size: clamp(1.12rem, 2vw, 1.35rem);
+            line-height: 1.6;
+            max-width: 26ch;
+        }
+
+        .intro {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            background: none;
+            color: #ddcfb5;
+            line-height: 1.85;
+            box-shadow: none;
+            width: 100%;
+            max-width: none;
+        }
+
+        .intro strong {
+            color: #fff2d6;
+        }
+
+        .article-content {
+            padding: 0 clamp(1.4rem, 5vw, 4rem) clamp(3rem, 6vw, 4.5rem);
+        }
+
+        .article-body {
+            max-width: var(--article-stage);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .article-body > h2,
+        .article-body > p,
+        .article-outro,
+        .next-link {
+            max-width: var(--article-measure);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .article-content h2 {
+            margin: 0 auto 1.1rem;
+            padding-top: 3.4rem;
+            color: #f7edde;
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -0.02em;
+            border-top: 1px solid #2b2318;
+        }
+
+        .article-content h2:first-child {
+            padding-top: 0;
+            border-top: 0;
+        }
+
+        .article-content p {
+            margin: 0;
+            color: #d7ccb9;
+            line-height: 1.9;
+            font-size: 1.06rem;
+        }
+
+        .article-body > p + p {
+            margin-top: 1.1rem;
+        }
+
+        .article-body > p + .signal-grid,
+        .article-body > p + .article-outro {
+            margin-top: 1.7rem;
+        }
+
+        .article-content strong {
+            color: #fff1d1;
+        }
+
+        .signal-grid {
+            list-style: none;
+            max-width: var(--article-measure);
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        .signal-grid li {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            gap: 0.3rem 0.95rem;
+            align-items: start;
+            padding: 0.95rem 0;
+            border-top: 1px solid #2c2418;
+        }
+
+        .signal-grid li::before {
+            content: "";
+            width: 0.52rem;
+            height: 0.52rem;
+            margin-top: 0.58rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #ffcf70, #f7931a);
+            box-shadow: 0 0 0 4px #f7931a14;
+        }
+
+        .signal-grid strong {
+            display: block;
+            margin-bottom: 0.14rem;
+            color: #fff1d1;
+            font-size: 0.94rem;
+        }
+
+        .signal-grid span {
+            display: block;
+            color: #cabda7;
+            line-height: 1.7;
+            font-size: 0.98rem;
+        }
+
+        .rule-grid li::before {
+            background: linear-gradient(135deg, #ffe6ad, #ffcf70);
+            box-shadow: 0 0 0 6px #ffcf7012;
+        }
+
+        .article-outro {
+            margin-top: 2.6rem;
+            padding: 1.6rem 0 0;
+            border-top: 1px solid #2d2418;
+            color: #d7ccb9;
+            line-height: 1.9;
+            font-size: 1.06rem;
+        }
+
+        .article-outro strong {
+            display: block;
+            margin-bottom: 0.45rem;
+        }
+
+        .next-link {
+            margin-top: 3.1rem;
+            color: var(--muted);
+        }
+
+        .next-link a {
+            color: #ffe0a6;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .next-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 900px) {
+            .article-hero-grid,
+            .signal-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro,
+            .subtitle,
+            .article-hero-copy {
+                max-width: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .article-shell {
+                padding-top: 0.5rem;
+            }
+
+            .article-frame {
+                border-radius: 28px;
+            }
+
+            .article-hero,
+            .article-content {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+    <header class="site-header container article-header">
+        <a href="../index.html" class="brand">EstudioBTC</a>
+        <nav class="main-nav">
+            <a href="../index.html#articulos" aria-current="page">Artículos</a>
+            <a href="../cursos-info.html">Capacitaciones</a>
+            <a href="../sobre-mi.html">Sobre Mí</a>
+            <a href="../contacto.html">Contacto</a>
+        </nav>
+        <a href="../index.html#articulos" class="btn btn-small header-cta">Volver</a>
+    </header>
+
+    <main id="contenido" class="container article-shell">
+        <article class="article-frame">
+            <section class="article-hero">
+                <div class="article-hero-grid">
+                    <div class="article-hero-copy">
+                        <p class="kicker">Historia del dinero</p>
+                        <h1>¿Por qué necesitamos Bitcoin?</h1>
+                        <p class="subtitle">Del dinero sin límite a un sistema de reglas verificables</p>
+                    </div>
+                    <div class="intro">
+                        Bitcoin no apareció por casualidad. Apareció como respuesta a un problema de fondo del dinero moderno: depende de confianza política y puede emitirse sin un límite real.
+                    </div>
+                </div>
+            </section>
+
+            <div class="article-content">
+                <div class="article-body">
+                <h2>El dinero no es riqueza, es una herramienta</h2>
+                <p>Durante siglos, el dinero cumplió tres funciones: intercambiar valor, medirlo y conservarlo en el tiempo. Cuando esas tres funciones están sanas, las personas pueden ahorrar, planificar y construir su futuro con cierta previsibilidad.</p>
+                <p>El problema empieza cuando falla la función de reserva de valor. Si el dinero que ahorrás hoy vale menos mañana, el ahorro pierde sentido y todo el sistema cambia sus incentivos.</p>
+
+                <h2>1971: el año que cambió las reglas</h2>
+                <p>Durante buena parte del siglo XX, el dólar estuvo vinculado al oro. Eso imponía un límite real: no se podía expandir dinero indefinidamente sin respaldo.</p>
+                <p>Ese límite desapareció cuando Richard Nixon suspendió la convertibilidad del dólar en oro. Desde entonces, el mundo opera con dinero fiduciario: vale porque una autoridad lo dice y puede emitirse sin un límite duro.</p>
+
+                <h2>Qué pasa cuando el dinero no tiene límite</h2>
+                <p>Cuando la emisión deja de tener un freno real, cambian los incentivos de todo el sistema:</p>
+                <ul class="signal-grid">
+                    <li>
+                        <div>
+                            <strong>Más margen para gastar</strong>
+                            <span>Los gobiernos pueden financiar déficits sin subir impuestos de forma directa.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <strong>Expansión ante cada crisis</strong>
+                            <span>Los bancos centrales amplían la cantidad de dinero cada vez que el sistema se tensiona.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <strong>El ahorro se erosiona</strong>
+                            <span>Tu poder adquisitivo se desgasta con el tiempo, incluso si el saldo en la cuenta no cambia.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <strong>Se premia la deuda</strong>
+                            <span>Ahorrar se vuelve menos atractivo y endeudarse pasa a ser parte del incentivo del sistema.</span>
+                        </div>
+                    </li>
+                </ul>
+                <p>No es un accidente. Es una consecuencia natural de un sistema donde unos pocos pueden decidir cuánto dinero existe.</p>
+
+                <h2>El problema de fondo: confianza obligatoria</h2>
+                <p>El sistema actual te exige confiar en bancos centrales, gobiernos y política monetaria futura. Si vivís en un país, usás su moneda y quedás expuesto a decisiones que no controlás.</p>
+                <p>La pregunta de fondo es simple: ¿debería el valor de tus ahorros depender de decisiones políticas?</p>
+
+                <h2>La respuesta de Bitcoin</h2>
+                <p>En 2008, en plena crisis financiera global, Satoshi Nakamoto publicó un documento con una idea radical: un dinero digital que ningún gobierno, banco o empresa pudiera controlar, inflar o confiscar.</p>
+                <p>Bitcoin no busca arreglar el sistema actual desde adentro. Cambia la premisa y propone reglas fijas, matemáticas y verificables por cualquiera.</p>
+                <ul class="signal-grid rule-grid">
+                    <li>
+                        <div>
+                            <strong>21 millones</strong>
+                            <span>Jamás existirán más de 21 millones de bitcoins. Nadie puede cambiarlo.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <strong>Sin permiso previo</strong>
+                            <span>No necesitás que un banco o una empresa autorice tus envíos o cobros.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <strong>Reglas auditables</strong>
+                            <span>Las reglas son transparentes y cualquier persona puede verificarlas.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <strong>Alcance global</strong>
+                            <span>Funciona igual en Argentina que en Zimbabue, sin fronteras ni intermediarios obligatorios.</span>
+                        </div>
+                    </li>
+                </ul>
+                <p>En otras palabras, Bitcoin no te pide confianza ciega. Te pide verificación.</p>
+
+                <h2>No se trata solo del precio</h2>
+                <p>Vivimos en un mundo donde más de 1.400 millones de personas no tienen acceso a un banco, donde los ahorros pueden ser destruidos por decisiones políticas y donde enviar dinero al exterior sigue siendo caro y lento. Bitcoin ofrece una alternativa a esos tres problemas al mismo tiempo.</p>
+                <p>No es solo una inversión. Es la primera forma de dinero digital escaso por matemática y no por promesa.</p>
+
+                <div class="article-outro">
+                    <strong>Para cerrar</strong>
+                    Bitcoin surge porque el dinero actual depende de confianza política y emisión sin límite. Frente a eso, propone reglas en lugar de decisiones, escasez verificable en lugar de promesas y soberanía individual en lugar de intermediación obligatoria. La pregunta ya no es si Bitcoin es necesario. La pregunta es cuánto tiempo llevará que más personas entiendan por qué apareció.
+                </div>
+
+                <p class="next-link">Siguiente lectura: <a href="03-comprar-vs-tener-bitcoin.html">La diferencia entre comprar Bitcoin y tener Bitcoin</a></p>
+                </div>
+            </div>
+        </article>
     </main>
-  </body>
+</body>
 </html>

@@ -191,7 +191,7 @@ h2 {
 }
 
 .hero {
-  padding: 5.2rem 0 4.2rem;
+  padding: 5.2rem 0 2.8rem;
 }
 
 .kicker {
@@ -206,6 +206,7 @@ h2 {
   color: var(--muted);
   font-size: 1.15rem;
   max-width: 52ch;
+  margin-top: 1rem;
 }
 
 .muted-text {
@@ -223,6 +224,11 @@ h2 {
   margin-bottom: 0.15rem;
 }
 
+.trust-intro {
+  margin: 0;
+  white-space: nowrap;
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
@@ -232,6 +238,10 @@ h2 {
 
 .hero-copy {
   min-width: 0;
+}
+
+.hero-grid-single {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .hero-panel {
@@ -289,6 +299,14 @@ h2 {
 .summary-card strong,
 .hero-proof-item strong {
   display: block;
+}
+
+.summary-card strong {
+  white-space: nowrap;
+}
+
+.hero-proof-item strong {
+  white-space: normal;
 }
 
 .summary-card span {
@@ -458,7 +476,7 @@ section {
 }
 
 .security-banner {
-  margin-top: -2.5rem;
+  margin-top: -3.4rem;
   margin-bottom: 3.8rem;
 }
 
@@ -472,13 +490,134 @@ section {
 }
 
 .learn-bitcoin {
-  margin-top: -0.8rem;
+  margin-top: 0.9rem;
+  margin-bottom: 3.1rem;
 }
 
 .learn-bitcoin h2 {
   font-size: clamp(1.45rem, 2.35vw, 1.95rem);
   margin-bottom: 0.6rem;
-  max-width: 24ch;
+  max-width: none;
+  white-space: nowrap;
+}
+
+.trust .section-head h2 {
+  font-size: clamp(1.45rem, 2.35vw, 1.95rem);
+  margin-bottom: 0.6rem;
+}
+
+.articles .section-head h2 {
+  font-size: clamp(1.45rem, 2.35vw, 1.95rem);
+  white-space: nowrap;
+}
+
+.syllabus .section-head h2 {
+  font-size: clamp(1.45rem, 2.35vw, 1.95rem);
+}
+
+.pricing .section-head h2 {
+  font-size: clamp(1.45rem, 2.35vw, 1.95rem);
+  margin-bottom: 0.3rem;
+}
+
+.instructor h2 {
+  font-size: clamp(1.45rem, 2.35vw, 1.95rem);
+  margin-bottom: 0.02rem;
+}
+
+.faq h2 {
+  font-size: clamp(1.45rem, 2.35vw, 1.95rem);
+}
+
+.cta h2 {
+  font-size: clamp(1.45rem, 2.35vw, 1.95rem);
+}
+
+.faq-question-inline {
+  white-space: nowrap;
+}
+
+.faq-card-fit,
+.faq-card-fit h3 {
+  font-size: 1.04rem;
+  line-height: 1.2;
+}
+
+.faq-card-fit p {
+  font-size: 0.97rem;
+  line-height: 1.58;
+}
+
+.faq-card-tight {
+  gap: 0;
+}
+
+.faq-card-tight h3 {
+  margin-bottom: 0;
+}
+
+.faq-card-tight p {
+  margin-top: -0.16rem;
+}
+
+.instructor h2 + p {
+  margin: 0.5rem 0 0;
+}
+
+.pricing .section-head {
+  max-width: none;
+  gap: 0.12rem;
+}
+
+.pricing .section-head .muted-text {
+  margin: 0;
+}
+
+.pricing .cards {
+  margin-top: 2.3rem;
+}
+
+.articles .section-head {
+  max-width: none;
+  gap: 0.28rem;
+}
+
+.articles .section-head .muted-text {
+  margin: 0;
+}
+
+.articles {
+  margin-bottom: 3.3rem;
+}
+
+.articles .cards {
+  margin-top: 2.5rem;
+}
+
+.syllabus {
+  margin-bottom: 3.2rem;
+}
+
+.trust .section-head {
+  gap: 0;
+}
+
+.trust .cards {
+  margin-top: 2.5rem;
+}
+
+.trust {
+  margin-bottom: 3.2rem;
+}
+
+.trust .card {
+  grid-template-rows: minmax(3.1rem, auto) 1fr;
+  align-content: start;
+}
+
+.trust .card h3 {
+  margin: 0;
+  line-height: 1.25;
 }
 
 .learn-bitcoin-intro {
@@ -614,26 +753,13 @@ section {
   color: #e9e4d8;
 }
 
-.featured {
-  border-color: #af7c2c;
-  box-shadow: 0 14px 30px #f7931a29;
-}
-
-.tag {
-  margin: 0;
-  font-size: 0.74rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #1a1100;
-  background: var(--accent-2);
-  width: fit-content;
-  padding: 0.18rem 0.42rem;
-  border-radius: 999px;
-}
-
 .pricing-note {
   color: var(--muted);
-  margin-top: 1rem;
+  margin: 1rem 0 0;
+}
+
+.pricing {
+  margin-bottom: 3.2rem;
 }
 
 .feature-band {
@@ -681,13 +807,14 @@ section {
 
 .instructor {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
   align-items: start;
+  margin-bottom: 3.4rem;
 }
 
 .instructor ul {
-  margin: 0;
+  margin: 1.9rem 0 0;
   padding-left: 1.2rem;
   color: var(--text);
 }
@@ -708,9 +835,20 @@ section {
   box-shadow: var(--shadow);
 }
 
+.cta > div:first-child {
+  align-self: start;
+  margin-top: -0.82rem;
+}
+
+.cta > div:first-child h2 + p {
+  margin: 0.34rem 0 0;
+}
+
 .signup-form {
   display: grid;
   gap: 0.55rem;
+  align-self: start;
+  margin-top: -0.16rem;
 }
 
 .form-card {
@@ -722,7 +860,7 @@ section {
 }
 
 .signup-form label {
-  font-size: 0.92rem;
+  font-size: 0.89rem;
   color: var(--accent-2);
 }
 
@@ -733,9 +871,15 @@ section {
   border-radius: 10px;
   background: #13120e;
   color: var(--text);
-  padding: 0.74rem 0.8rem;
+  padding: 0.64rem 0.8rem;
   font: inherit;
+  font-size: 0.95rem;
   transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.signup-form input,
+.signup-form select {
+  min-height: 2.5rem;
 }
 
 .signup-form textarea {
@@ -763,7 +907,7 @@ section {
 .cta-list {
   list-style: none;
   padding: 0;
-  margin: 1rem 0 0;
+  margin: 1.95rem 0 0;
   display: grid;
   gap: 0.55rem;
   color: var(--muted);
@@ -965,6 +1109,22 @@ section {
 
   .hero {
     padding-top: 3.3rem;
+  }
+
+  .learn-bitcoin h2 {
+    white-space: normal;
+  }
+
+  .trust-intro {
+    white-space: normal;
+  }
+
+  .articles .section-head h2 {
+    white-space: normal;
+  }
+
+  .faq-question-inline {
+    white-space: normal;
   }
 
   .summary-card,
