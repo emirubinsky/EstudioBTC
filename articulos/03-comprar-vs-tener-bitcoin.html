@@ -4,149 +4,550 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La diferencia entre comprar Bitcoin y tener Bitcoin | EstudioBTC</title>
+    <meta
+      name="description"
+      content="Una guía clara sobre la diferencia entre comprar Bitcoin en un exchange y tenerlo bajo control propio."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="article.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .article-header {
+        margin-bottom: 1rem;
+      }
+
+      .article-shell {
+        padding: 1rem 0 5rem;
+      }
+
+      body::before {
+        display: none;
+      }
+
+      .article-frame {
+        --article-measure: 46rem;
+        --article-stage: 58rem;
+        --hero-stage: 54rem;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #2f2518;
+        border-radius: 40px;
+        background:
+          radial-gradient(circle at top right, #f7931a16 0%, transparent 26%),
+          radial-gradient(circle at top left, #ffcf7008 0%, transparent 24%),
+          linear-gradient(180deg, #171510 0%, #100f0c 38%, #0d0c0a 100%);
+        box-shadow: var(--shadow);
+      }
+
+      .article-frame > * {
+        position: relative;
+      }
+
+      .article-hero {
+        position: relative;
+        padding: clamp(3rem, 7vw, 5.2rem) clamp(1.8rem, 5vw, 4.2rem) 2.9rem;
+      }
+
+      .article-hero::before {
+        content: "";
+        position: absolute;
+        right: -7rem;
+        top: -6rem;
+        width: 24rem;
+        height: 24rem;
+        border-radius: 50%;
+        background: radial-gradient(circle, #f7931a12 0%, transparent 68%);
+        opacity: 0.8;
+      }
+
+      .article-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.78fr);
+        gap: 1.6rem;
+        align-items: start;
+        max-width: var(--hero-stage);
+        margin-inline: auto;
+        text-align: left;
+      }
+
+      .article-hero-copy {
+        min-width: 0;
+        max-width: 42rem;
+      }
+
+      .article-hero h1 {
+        margin-bottom: 1rem;
+        max-width: 13ch;
+        font-size: clamp(2.2rem, 4.6vw, 3.45rem);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: #fff4df;
+        text-wrap: balance;
+      }
+
+      .subtitle {
+        margin: 0;
+        color: #f0e6d5;
+        font-size: clamp(1.02rem, 1.9vw, 1.2rem);
+        line-height: 1.65;
+        max-width: 34ch;
+      }
+
+      .hero-intro {
+        margin: 1.3rem 0 0;
+        color: #ddcfb5;
+        line-height: 1.85;
+        max-width: 45ch;
+      }
+
+      .hero-intro p {
+        margin: 0;
+      }
+
+      .hero-intro p + p {
+        margin-top: 1rem;
+      }
+
+      .article-panel {
+        align-self: start;
+        justify-self: end;
+        width: min(100%, 22rem);
+      }
+
+      .article-panel h2 {
+        max-width: 12ch;
+      }
+
+      .article-panel .hero-steps {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .article-panel .hero-steps li {
+        position: relative;
+        padding-left: 1.15rem;
+      }
+
+      .article-panel .hero-steps li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.62rem;
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #ffcf70, #f7931a);
+        box-shadow: 0 0 0 4px #f7931a12;
+      }
+
+      .article-content {
+        padding: 0 clamp(1.4rem, 5vw, 4rem) clamp(3rem, 6vw, 4.5rem);
+      }
+
+      .article-body {
+        max-width: var(--article-stage);
+        margin-inline: auto;
+      }
+
+      .article-section,
+      .article-outro,
+      .next-link {
+        max-width: var(--article-measure);
+        margin-inline: auto;
+      }
+
+      .article-section + .article-section {
+        margin-top: 3.2rem;
+        padding-top: 3.2rem;
+        border-top: 1px solid #2b2318;
+      }
+
+      .article-section h2 {
+        margin: 0 0 1.1rem;
+        color: #f7edde;
+        font-size: clamp(2rem, 4vw, 3rem);
+        letter-spacing: -0.02em;
+      }
+
+      .article-section p {
+        margin: 0;
+        color: #d7ccb9;
+        line-height: 1.9;
+        font-size: 1.06rem;
+      }
+
+      .article-section p + p,
+      .article-section p + .signal-grid,
+      .article-section .signal-grid + p {
+        margin-top: 1.15rem;
+      }
+
+      .article-content strong {
+        color: #fff1d1;
+      }
+
+      .signal-grid {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .signal-grid li {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 0.3rem 0.95rem;
+        align-items: start;
+        padding: 0.95rem 0;
+        border-top: 1px solid #2c2418;
+      }
+
+      .signal-grid li:first-child {
+        border-top: 1px solid #2c2418;
+      }
+
+      .signal-grid li::before {
+        content: "";
+        width: 0.52rem;
+        height: 0.52rem;
+        margin-top: 0.58rem;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #ffcf70, #f7931a);
+        box-shadow: 0 0 0 4px #f7931a14;
+      }
+
+      .signal-grid strong {
+        display: block;
+        margin-bottom: 0.14rem;
+        color: #fff1d1;
+        font-size: 0.95rem;
+      }
+
+      .signal-grid span {
+        display: block;
+        color: #cabda7;
+        line-height: 1.7;
+        font-size: 0.98rem;
+      }
+
+      .rule-grid li::before {
+        background: linear-gradient(135deg, #ffe6ad, #ffcf70);
+        box-shadow: 0 0 0 6px #ffcf7012;
+      }
+
+      .article-outro {
+        margin-top: 3rem;
+        padding: 1.7rem 0 0;
+        border-top: 1px solid #2d2418;
+        color: #d7ccb9;
+        line-height: 1.9;
+        font-size: 1.06rem;
+      }
+
+      .article-outro strong {
+        display: block;
+        margin-bottom: 0.45rem;
+      }
+
+      .next-link {
+        margin-top: 3rem;
+        color: var(--muted);
+      }
+
+      .next-link a {
+        color: #ffe0a6;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .next-link a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 900px) {
+        .article-hero-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .subtitle,
+        .hero-intro,
+        .article-hero-copy,
+        .article-panel {
+          max-width: none;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .article-shell {
+          padding-top: 0.5rem;
+        }
+
+        .article-frame {
+          border-radius: 28px;
+        }
+
+        .article-hero,
+        .article-content {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="container topbar"><a href="../index.html#articulos">← Volver a EstudioBTC</a></div>
-    <main class="container">
-      <article class="article">
-        <p class="meta">Nivel 2 · Lectura 11 min</p>
-        <h1>La diferencia entre comprar Bitcoin y tener Bitcoin</h1>
-        <p class="lead">
-          Mucha gente cree que ya tiene Bitcoin porque lo compró en una app y ve un
-          saldo en pantalla. En Bitcoin, esa diferencia no es semántica: es
-          estructural.
-        </p>
-        <p>
-          Entenderla cambia por completo la forma de gestionar riesgo, custodia y
-          soberanía.
-        </p>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
 
-        <h2>1. Comprar Bitcoin no es lo mismo que poseerlo</h2>
-        <p>
-          Cuando comprás Bitcoin en un exchange, en la mayoría de los casos no
-          tomás control directo del activo en la red. Lo que hacés, en términos
-          prácticos, es abrir una cuenta en una empresa, depositar dinero y recibir
-          un saldo interno dentro de su sistema.
-        </p>
-        <p>
-          Ese saldo puede representar un derecho contractual frente a la empresa,
-          pero no necesariamente control efectivo sobre Bitcoin on-chain.
-        </p>
+    <header class="site-header container article-header">
+      <a href="../index.html" class="brand">EstudioBTC</a>
+      <nav class="main-nav">
+        <a href="../index.html#articulos" aria-current="page">Artículos</a>
+        <a href="../cursos-info.html">Capacitaciones</a>
+        <a href="../sobre-mi.html">Sobre Mí</a>
+        <a href="../contacto.html">Contacto</a>
+      </nav>
+      <a href="../index.html#articulos" class="btn btn-small header-cta">Volver</a>
+    </header>
 
-        <h2>2. ¿Qué significa realmente tener Bitcoin?</h2>
-        <p>
-          Bitcoin funciona con criptografía de clave pública y clave privada. La
-          pública es una dirección; la privada es la que firma transacciones y
-          permite gastar fondos.
-        </p>
-        <p>
-          La regla es simple: quien controla la clave privada controla el Bitcoin.
-          No hay autoridad central que revierta una transacción, no hay botón de
-          recuperación si se pierde la clave y no hay soporte que pueda devolverte
-          acceso.
-        </p>
-        <p>
-          Por eso, la propiedad en Bitcoin no depende primero de una definición
-          legal, sino de control criptográfico.
-        </p>
+    <main id="contenido" class="container article-shell">
+      <article class="article-frame">
+        <section class="article-hero">
+          <div class="article-hero-grid">
+            <div class="article-hero-copy">
+              <p class="kicker">Custodia y soberanía</p>
+              <h1>La diferencia entre<br />comprar Bitcoin y tener Bitcoin</h1>
+              <p class="subtitle">
+                Comprar en una app no equivale a controlar el activo en la red.
+              </p>
+              <div class="hero-intro">
+                <p>
+                  Mucha gente cree que ya tiene Bitcoin porque lo compró en una
+                  app y ve un saldo en pantalla.
+                </p>
+                <p>
+                  Entender esa diferencia cambia por completo la forma de
+                  gestionar riesgo, custodia y soberanía.
+                </p>
+              </div>
+            </div>
+            <aside class="hero-panel article-panel">
+              <p class="panel-kicker">Mapa rápido</p>
+              <h2>Qué conviene ordenar primero</h2>
+              <ul class="hero-steps hero-steps-compact">
+                <li>Separar saldo visible de control real sobre el activo.</li>
+                <li>Entender qué riesgos aparecen cuando custodia un tercero.</li>
+                <li>Ver qué significa soberanía en la práctica.</li>
+              </ul>
+              <div class="hero-proof">
+                <div class="hero-proof-item">
+                  <span>Nivel</span>
+                  <strong>Inicial intermedio</strong>
+                </div>
+                <div class="hero-proof-item">
+                  <span>Lectura</span>
+                  <strong>11 min</strong>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
 
-        <h2>3. Exchanges no son custodia soberana</h2>
-        <p>
-          Un exchange cumple funciones útiles: facilita compra y venta, aporta
-          liquidez y permite operar con moneda local. Como puerta de entrada, tiene
-          sentido.
-        </p>
-        <p>
-          El problema es confundir esa utilidad con soberanía. Si dejás tus fondos
-          ahí, dependés de su seguridad, su solvencia, su cumplimiento regulatorio y
-          su infraestructura técnica.
-        </p>
-        <p>
-          Casos como Mt. Gox o FTX no fueron fallas del protocolo Bitcoin: fueron
-          fallas de terceros. Y cuando un tercero falla, el riesgo lo absorbe el
-          usuario.
-        </p>
+        <div class="article-content">
+          <div class="article-body">
+            <section class="article-section">
+              <h2>Comprar Bitcoin no es lo mismo que poseerlo</h2>
+              <p>
+                Cuando comprás Bitcoin en un exchange, en la mayoría de los casos
+                no tomás control directo del activo en la red. Lo que hacés, en
+                términos prácticos, es abrir una cuenta en una empresa, depositar
+                dinero y recibir un saldo interno dentro de su sistema.
+              </p>
+              <p>
+                Ese saldo puede representar un derecho contractual frente a la
+                empresa, pero no necesariamente control efectivo sobre Bitcoin
+                on-chain.
+              </p>
+            </section>
 
-        <h2>4. El riesgo invisible de terceros</h2>
-        <p>
-          Mantener Bitcoin en custodia de un intermediario implica riesgos que en
-          épocas tranquilas suelen subestimarse:
-        </p>
-        <ul>
-          <li>Congelamiento de cuentas.</li>
-          <li>Restricciones regulatorias.</li>
-          <li>Hackeos o filtraciones.</li>
-          <li>Insolvencia.</li>
-          <li>Cambios unilaterales de políticas.</li>
-          <li>Limitaciones de retiro en momentos de alta volatilidad.</li>
-        </ul>
-        <p>
-          Bitcoin nace, precisamente, para reducir la necesidad de confiar en
-          intermediarios. Volver a depender de ellos, sin estrategia, contradice su
-          propuesta central.
-        </p>
+            <section class="article-section">
+              <h2>Qué significa realmente tener Bitcoin</h2>
+              <p>
+                Bitcoin funciona con criptografía de clave pública y clave
+                privada. La pública es una dirección; la privada es la que firma
+                transacciones y permite gastar fondos.
+              </p>
+              <p>
+                La regla es simple: quien controla la clave privada controla el
+                Bitcoin. No hay autoridad central que revierta una transacción, no
+                hay botón de recuperación si se pierde la clave y no hay soporte
+                que pueda devolverte acceso.
+              </p>
+              <p>
+                Por eso, la propiedad en Bitcoin no depende primero de una
+                definición legal, sino de control criptográfico.
+              </p>
+            </section>
 
-        <h2>5. El verdadero significado de soberanía</h2>
-        <p>
-          Soberanía, en Bitcoin, no es una palabra abstracta. Es control operativo:
-          tus claves, tus decisiones y tu responsabilidad.
-        </p>
-        <ul>
-          <li>Control exclusivo de tus claves.</li>
-          <li>Capacidad de mover fondos sin pedir permiso.</li>
-          <li>No depender de la solvencia de terceros.</li>
-          <li>Asumir seguridad con criterio y disciplina.</li>
-        </ul>
-        <p>
-          Esto requiere aprendizaje: autocustodia, respaldo de semillas, seguridad
-          operacional y gestión responsable del riesgo. No es inaccesible, pero sí
-          requiere intención.
-        </p>
+            <section class="article-section">
+              <h2>Exchanges no son custodia soberana</h2>
+              <p>
+                Un exchange cumple funciones útiles: facilita compra y venta,
+                aporta liquidez y permite operar con moneda local. Como puerta de
+                entrada, tiene sentido.
+              </p>
+              <p>
+                El problema es confundir esa utilidad con soberanía. Si dejás tus
+                fondos ahí, dependés de su seguridad, su solvencia, su
+                cumplimiento regulatorio y su infraestructura técnica.
+              </p>
+              <p>
+                Casos como Mt. Gox o FTX no fueron fallas del protocolo Bitcoin:
+                fueron fallas de terceros. Y cuando un tercero falla, el riesgo lo
+                absorbe el usuario.
+              </p>
+            </section>
 
-        <h2>6. No se trata de desconfianza paranoica</h2>
-        <p>
-          No se trata de afirmar que todos los exchanges van a quebrar mañana. Se
-          trata de comprender cómo está diseñado el sistema y qué riesgos asumís en
-          cada capa.
-        </p>
-        <p>
-          Muchos usan exchanges como primer paso, y eso es razonable. El error es
-          quedarse ahí creyendo que ya se posee el activo en su forma plena.
-        </p>
+            <section class="article-section">
+              <h2>El riesgo invisible de terceros</h2>
+              <p>
+                Mantener Bitcoin en custodia de un intermediario implica riesgos
+                que en épocas tranquilas suelen subestimarse:
+              </p>
+              <ul class="signal-grid">
+                <li>
+                  <div>
+                    <strong>Congelamiento de cuentas</strong>
+                    <span>Un tercero puede limitar o bloquear tu acceso a los fondos.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Restricciones regulatorias</strong>
+                    <span>Cambios externos pueden afectar retiros, operaciones o disponibilidad.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Hackeos o filtraciones</strong>
+                    <span>La seguridad de tus fondos depende de una infraestructura ajena.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Insolvencia</strong>
+                    <span>Si la empresa falla financieramente, el usuario absorbe el daño.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Cambios unilaterales de políticas</strong>
+                    <span>Las reglas pueden modificarse sin que tengas control sobre ellas.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Limitaciones de retiro</strong>
+                    <span>En momentos de alta volatilidad, salir puede volverse más difícil.</span>
+                  </div>
+                </li>
+              </ul>
+              <p>
+                Bitcoin nace, precisamente, para reducir la necesidad de confiar
+                en intermediarios. Volver a depender de ellos, sin estrategia,
+                contradice su propuesta central.
+              </p>
+            </section>
 
-        <h2>7. Comprar es el primer paso. Tener es el siguiente</h2>
-        <p>
-          Comprar Bitcoin es relativamente simple. Tenerlo de forma soberana exige
-          entender su funcionamiento.
-        </p>
-        <p>
-          La diferencia es profunda: comprar implica confianza en terceros; tener
-          implica control propio. En un sistema diseñado para minimizar la
-          confianza, ese control marca la diferencia.
-        </p>
+            <section class="article-section">
+              <h2>El verdadero significado de soberanía</h2>
+              <p>
+                Soberanía, en Bitcoin, no es una palabra abstracta. Es control
+                operativo: tus claves, tus decisiones y tu responsabilidad.
+              </p>
+              <ul class="signal-grid rule-grid">
+                <li>
+                  <div>
+                    <strong>Tus claves</strong>
+                    <span>Control exclusivo de las credenciales que habilitan el gasto.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Tus decisiones</strong>
+                    <span>Capacidad de mover fondos sin pedir permiso a un tercero.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Tu contraparte</strong>
+                    <span>No depender de la solvencia, continuidad o criterio de otra empresa.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Tu responsabilidad</strong>
+                    <span>Asumir seguridad con criterio, respaldo y disciplina operativa.</span>
+                  </div>
+                </li>
+              </ul>
+              <p>
+                Esto requiere aprendizaje: autocustodia, respaldo de semillas,
+                seguridad operacional y gestión responsable del riesgo. No es
+                inaccesible, pero sí requiere intención.
+              </p>
+            </section>
 
-        <h2>Conclusión</h2>
-        <p>
-          Bitcoin no es solo un activo digital: es un sistema monetario basado en
-          reglas verificables y propiedad criptográfica.
-        </p>
-        <p>
-          La adopción real no empieza cuando alguien descarga una app. Empieza
-          cuando entiende qué significa controlar sus propias claves.
-        </p>
-        <p>
-          Porque en Bitcoin, la pregunta no es cuánto compraste. La pregunta es:
-          ¿realmente lo tenés?
-        </p>
+            <section class="article-section">
+              <h2>No se trata de desconfianza paranoica</h2>
+              <p>
+                No se trata de afirmar que todos los exchanges van a quebrar
+                mañana. Se trata de comprender cómo está diseñado el sistema y qué
+                riesgos asumís en cada capa.
+              </p>
+              <p>
+                Muchos usan exchanges como primer paso, y eso es razonable. El
+                error es quedarse ahí creyendo que ya se posee el activo en su
+                forma plena.
+              </p>
+            </section>
 
-        <p class="next">Siguiente lectura: <a href="04-que-es-una-billetera-bitcoin.html">¿Qué es una billetera de Bitcoin y cómo funciona?</a></p>
+            <section class="article-section">
+              <h2>Comprar es el primer paso. Tener es el siguiente</h2>
+              <p>
+                Comprar Bitcoin es relativamente simple. Tenerlo de forma soberana
+                exige entender su funcionamiento.
+              </p>
+              <p>
+                La diferencia es profunda: comprar implica confianza en terceros;
+                tener implica control propio. En un sistema diseñado para
+                minimizar la confianza, ese control marca la diferencia.
+              </p>
+            </section>
+
+            <div class="article-outro">
+              <strong>Para cerrar</strong>
+              Bitcoin no es solo un activo digital: es un sistema monetario
+              basado en reglas verificables y propiedad criptográfica. La adopción
+              real no empieza cuando alguien descarga una app. Empieza cuando
+              entiende qué significa controlar sus propias claves. Porque en
+              Bitcoin, la pregunta no es cuánto compraste. La pregunta es:
+              ¿realmente lo tenés?
+            </div>
+
+            <p class="next-link">
+              Siguiente lectura:
+              <a href="04-que-es-una-billetera-bitcoin.html">
+                ¿Qué es una billetera de Bitcoin y cómo funciona?
+              </a>
+            </p>
+          </div>
+        </div>
       </article>
     </main>
   </body>

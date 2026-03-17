@@ -4,148 +4,590 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>¿Qué es una billetera de Bitcoin y cómo funciona? | EstudioBTC</title>
+    <meta
+      name="description"
+      content="Una explicación clara sobre qué hace una wallet de Bitcoin, qué rol cumplen la clave privada y la frase de recuperación."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="article.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .article-header {
+        margin-bottom: 1rem;
+      }
+
+      .article-shell {
+        padding: 1rem 0 5rem;
+      }
+
+      body::before {
+        display: none;
+      }
+
+      .article-frame {
+        --article-measure: 46rem;
+        --article-stage: 58rem;
+        --hero-stage: 54rem;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #2f2518;
+        border-radius: 40px;
+        background:
+          radial-gradient(circle at top right, #f7931a16 0%, transparent 26%),
+          radial-gradient(circle at top left, #ffcf7008 0%, transparent 24%),
+          linear-gradient(180deg, #171510 0%, #100f0c 38%, #0d0c0a 100%);
+        box-shadow: var(--shadow);
+      }
+
+      .article-frame > * {
+        position: relative;
+      }
+
+      .article-hero {
+        position: relative;
+        padding: clamp(3rem, 7vw, 5.2rem) clamp(1.8rem, 5vw, 4.2rem) 2.9rem;
+      }
+
+      .article-hero::before {
+        content: "";
+        position: absolute;
+        right: -7rem;
+        top: -6rem;
+        width: 24rem;
+        height: 24rem;
+        border-radius: 50%;
+        background: radial-gradient(circle, #f7931a12 0%, transparent 68%);
+        opacity: 0.8;
+      }
+
+      .article-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.78fr);
+        gap: 1.6rem;
+        align-items: start;
+        max-width: var(--hero-stage);
+        margin-inline: auto;
+        text-align: left;
+      }
+
+      .article-hero-copy {
+        min-width: 0;
+        max-width: 42rem;
+      }
+
+      .article-hero h1 {
+        margin-bottom: 1rem;
+        max-width: 13ch;
+        font-size: clamp(2.2rem, 4.6vw, 3.45rem);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: #fff4df;
+        text-wrap: balance;
+      }
+
+      .subtitle {
+        margin: 0;
+        color: #f0e6d5;
+        font-size: clamp(1.02rem, 1.9vw, 1.2rem);
+        line-height: 1.65;
+        max-width: 34ch;
+      }
+
+      .hero-intro {
+        margin: 1.3rem 0 0;
+        color: #ddcfb5;
+        line-height: 1.85;
+        max-width: 47ch;
+      }
+
+      .hero-intro p {
+        margin: 0;
+      }
+
+      .hero-intro p + p {
+        margin-top: 1rem;
+      }
+
+      .article-panel {
+        align-self: start;
+        justify-self: end;
+        width: min(100%, 22rem);
+      }
+
+      .article-panel h2 {
+        max-width: 12ch;
+      }
+
+      .article-panel .hero-steps {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .article-panel .hero-steps li {
+        position: relative;
+        padding-left: 1.15rem;
+      }
+
+      .article-panel .hero-steps li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.62rem;
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #ffcf70, #f7931a);
+        box-shadow: 0 0 0 4px #f7931a12;
+      }
+
+      .article-content {
+        padding: 0 clamp(1.4rem, 5vw, 4rem) clamp(3rem, 6vw, 4.5rem);
+      }
+
+      .article-body {
+        max-width: var(--article-stage);
+        margin-inline: auto;
+      }
+
+      .article-section,
+      .article-outro,
+      .next-link {
+        max-width: var(--article-measure);
+        margin-inline: auto;
+      }
+
+      .article-section + .article-section {
+        margin-top: 3.2rem;
+        padding-top: 3.2rem;
+        border-top: 1px solid #2b2318;
+      }
+
+      .article-section h2 {
+        margin: 0 0 1.1rem;
+        color: #f7edde;
+        font-size: clamp(2rem, 4vw, 3rem);
+        letter-spacing: -0.02em;
+      }
+
+      .article-section p {
+        margin: 0;
+        color: #d7ccb9;
+        line-height: 1.9;
+        font-size: 1.06rem;
+      }
+
+      .article-section p + p,
+      .article-section p + .signal-grid,
+      .article-section p + .comparison-grid,
+      .article-section .signal-grid + p,
+      .article-section .comparison-grid + p {
+        margin-top: 1.15rem;
+      }
+
+      .article-content strong {
+        color: #fff1d1;
+      }
+
+      .signal-grid {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .signal-grid li {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 0.3rem 0.95rem;
+        align-items: start;
+        padding: 0.95rem 0;
+        border-top: 1px solid #2c2418;
+      }
+
+      .signal-grid li::before {
+        content: "";
+        width: 0.52rem;
+        height: 0.52rem;
+        margin-top: 0.58rem;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #ffcf70, #f7931a);
+        box-shadow: 0 0 0 4px #f7931a14;
+      }
+
+      .signal-grid strong {
+        display: block;
+        margin-bottom: 0.14rem;
+        color: #fff1d1;
+        font-size: 0.95rem;
+      }
+
+      .signal-grid span {
+        display: block;
+        color: #cabda7;
+        line-height: 1.7;
+        font-size: 0.98rem;
+      }
+
+      .rule-grid li::before {
+        background: linear-gradient(135deg, #ffe6ad, #ffcf70);
+        box-shadow: 0 0 0 6px #ffcf7012;
+      }
+
+      .comparison-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .comparison-card {
+        padding: 1.2rem;
+        border: 1px solid #362a1a;
+        border-radius: 22px;
+        background: linear-gradient(180deg, #1a1712 0%, #13110d 100%);
+        box-shadow: 0 12px 28px #00000024;
+      }
+
+      .comparison-card h3 {
+        margin: 0 0 0.75rem;
+        color: #fff1d1;
+        font-size: 1.16rem;
+      }
+
+      .comparison-card p {
+        color: #d7ccb9;
+        font-size: 0.99rem;
+        line-height: 1.75;
+      }
+
+      .comparison-card p + p {
+        margin-top: 0.8rem;
+      }
+
+      .article-outro {
+        margin-top: 3rem;
+        padding: 1.7rem 0 0;
+        border-top: 1px solid #2d2418;
+        color: #d7ccb9;
+        line-height: 1.9;
+        font-size: 1.06rem;
+      }
+
+      .article-outro strong {
+        display: block;
+        margin-bottom: 0.45rem;
+      }
+
+      .next-link {
+        margin-top: 3rem;
+        color: var(--muted);
+      }
+
+      .next-link a {
+        color: #ffe0a6;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .next-link a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 900px) {
+        .article-hero-grid,
+        .comparison-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .subtitle,
+        .hero-intro,
+        .article-hero-copy,
+        .article-panel {
+          max-width: none;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .article-shell {
+          padding-top: 0.5rem;
+        }
+
+        .article-frame {
+          border-radius: 28px;
+        }
+
+        .article-hero,
+        .article-content {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="container topbar"><a href="../index.html#articulos">← Volver a EstudioBTC</a></div>
-    <main class="container">
-      <article class="article">
-        <p class="meta">Nivel 2 · Lectura 10 min</p>
-        <h1>¿Qué es una billetera de Bitcoin y cómo funciona?</h1>
-        <p class="lead">
-          Después de entender qué es Bitcoin y cuál es la diferencia entre comprarlo
-          y tenerlo realmente, aparece una pregunta clave: ¿dónde se guarda Bitcoin?
-        </p>
-        <p>
-          La respuesta suele sorprender: Bitcoin no está dentro de una billetera.
-          Bitcoin no se guarda en una app. Bitcoin vive en la red, más
-          precisamente, en la blockchain de Bitcoin.
-        </p>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
 
-        <h2>1. Qué hace realmente una wallet</h2>
-        <p>
-          Una billetera no guarda monedas como una billetera física. Lo que guarda
-          son las claves que te permiten demostrar que sos dueño de ciertos
-          bitcoins y autorizar movimientos.
-        </p>
-        <p>Una forma simple de verlo:</p>
-        <ul>
-          <li>La red de Bitcoin es un gran libro contable público.</li>
-          <li>Tu wallet es la herramienta para interactuar con ese libro.</li>
-          <li>Lo que te da control no es la app, sino tu clave privada.</li>
-        </ul>
+    <header class="site-header container article-header">
+      <a href="../index.html" class="brand">EstudioBTC</a>
+      <nav class="main-nav">
+        <a href="../index.html#articulos" aria-current="page">Artículos</a>
+        <a href="../cursos-info.html">Capacitaciones</a>
+        <a href="../sobre-mi.html">Sobre Mí</a>
+        <a href="../contacto.html">Contacto</a>
+      </nav>
+      <a href="../index.html#articulos" class="btn btn-small header-cta">Volver</a>
+    </header>
 
-        <h2>2. ¿Qué es una clave privada? (en simple)</h2>
-        <p>
-          La clave privada es un número secreto extremadamente largo. Ese número:
-        </p>
-        <ul>
-          <li>Demuestra que sos dueño de tus bitcoins.</li>
-          <li>Te permite firmar transacciones.</li>
-          <li>Te permite mover fondos a otra dirección.</li>
-        </ul>
-        <p>
-          Si alguien obtiene esa clave, puede mover tus bitcoins. Si la perdés, no
-          hay forma de recuperarla. No existe soporte técnico de Bitcoin que pueda
-          restituir ese acceso.
-        </p>
+    <main id="contenido" class="container article-shell">
+      <article class="article-frame">
+        <section class="article-hero">
+          <div class="article-hero-grid">
+            <div class="article-hero-copy">
+              <p class="kicker">Wallets y autocustodia</p>
+              <h1>¿Qué es una billetera de Bitcoin<br />y cómo funciona?</h1>
+              <p class="subtitle">
+                Bitcoin no vive dentro de una app: una wallet te permite
+                interactuar con la red y controlar tus claves.
+              </p>
+              <div class="hero-intro">
+                <p>
+                  Después de entender qué es Bitcoin y cuál es la diferencia entre
+                  comprarlo y tenerlo realmente, aparece una pregunta clave:
+                  ¿dónde se guarda Bitcoin?
+                </p>
+                <p>
+                  La respuesta suele sorprender: Bitcoin no está dentro de una
+                  billetera. Bitcoin vive en la red, más precisamente, en la
+                  blockchain de Bitcoin.
+                </p>
+              </div>
+            </div>
+            <aside class="hero-panel article-panel">
+              <p class="panel-kicker">Mapa rápido</p>
+              <h2>Qué necesitás entender primero</h2>
+              <ul class="hero-steps hero-steps-compact">
+                <li>Qué hace realmente una wallet y qué no hace.</li>
+                <li>Por qué la clave privada y la seed son el punto crítico.</li>
+                <li>Cómo distinguir custodia de autocustodia.</li>
+              </ul>
+              <div class="hero-proof">
+                <div class="hero-proof-item">
+                  <span>Nivel</span>
+                  <strong>Inicial intermedio</strong>
+                </div>
+                <div class="hero-proof-item">
+                  <span>Lectura</span>
+                  <strong>10 min</strong>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
 
-        <h2>3. ¿Qué es una frase de recuperación?</h2>
-        <p>
-          Como la clave privada es impracticable de memorizar, las wallets la
-          representan como una lista de 12 o 24 palabras.
-        </p>
-        <p>
-          Eso se conoce como frase de recuperación, seed phrase o frase semilla. Es
-          una representación legible de tu clave.
-        </p>
-        <p>
-          Regla central: quien tiene esas palabras, tiene el control de los fondos.
-        </p>
-        <ul>
-          <li>No se comparte.</li>
-          <li>No se guarda en capturas de pantalla.</li>
-          <li>No se envía por mail.</li>
-          <li>No se sube a la nube.</li>
-        </ul>
+        <div class="article-content">
+          <div class="article-body">
+            <section class="article-section">
+              <h2>Qué hace realmente una wallet</h2>
+              <p>
+                Una billetera no guarda monedas como una billetera física. Lo que
+                guarda son las claves que te permiten demostrar que sos dueño de
+                ciertos bitcoins y autorizar movimientos.
+              </p>
+              <p>Una forma simple de verlo:</p>
+              <ul class="signal-grid">
+                <li>
+                  <div>
+                    <strong>La red es el registro</strong>
+                    <span>La blockchain de Bitcoin funciona como el gran libro contable público.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>La wallet es la interfaz</strong>
+                    <span>Es la herramienta que usás para interactuar con ese registro.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>La clave es el control</strong>
+                    <span>Lo que te da propiedad real no es la app, sino tu clave privada.</span>
+                  </div>
+                </li>
+              </ul>
+            </section>
 
-        <h2>4. Tipos de billeteras: custodial vs no custodial</h2>
-        <p>
-          La diferencia más importante no es estética ni de marca: es quién controla
-          la clave privada.
-        </p>
+            <section class="article-section">
+              <h2>Qué es una clave privada, en simple</h2>
+              <p>
+                La clave privada es un número secreto extremadamente largo. Ese
+                número cumple tres funciones centrales:
+              </p>
+              <ul class="signal-grid">
+                <li>
+                  <div>
+                    <strong>Demostrar propiedad</strong>
+                    <span>Prueba criptográficamente que tenés control sobre tus bitcoins.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Firmar transacciones</strong>
+                    <span>Permite autorizar movimientos sin necesidad de un banco o empresa.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Mover fondos</strong>
+                    <span>Es lo que habilita transferir bitcoin a otra dirección.</span>
+                  </div>
+                </li>
+              </ul>
+              <p>
+                Si alguien obtiene esa clave, puede mover tus bitcoins. Si la
+                perdés, no hay forma de recuperarla. No existe soporte técnico de
+                Bitcoin que pueda restituir ese acceso.
+              </p>
+            </section>
 
-        <h3>Wallet custodial</h3>
-        <p>
-          En este modelo, una empresa guarda las claves por vos. Es lo que suele
-          pasar cuando comprás Bitcoin en un exchange y solo ves un saldo en tu
-          cuenta.
-        </p>
-        <p>
-          Ventaja: uso sencillo, recuperación de contraseña y experiencia tipo banco.
-        </p>
-        <p>
-          Desventaja: no tenés control real, dependés de un tercero para acceder y
-          mover fondos.
-        </p>
+            <section class="article-section">
+              <h2>Qué es una frase de recuperación</h2>
+              <p>
+                Como la clave privada es impracticable de memorizar, las wallets
+                la representan como una lista de 12 o 24 palabras.
+              </p>
+              <p>
+                Eso se conoce como frase de recuperación, seed phrase o frase
+                semilla. Es una representación legible de tu clave.
+              </p>
+              <p>
+                <strong>Regla central:</strong> quien tiene esas palabras, tiene
+                el control de los fondos.
+              </p>
+              <ul class="signal-grid rule-grid">
+                <li>
+                  <div>
+                    <strong>No se comparte</strong>
+                    <span>No se entrega a nadie, aunque diga ayudarte o darte soporte.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>No se guarda en capturas</strong>
+                    <span>Una imagen en el celular o la computadora multiplica el riesgo.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>No se envía por mail</strong>
+                    <span>El correo no es un canal seguro para guardar acceso crítico.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>No se sube a la nube</strong>
+                    <span>Si alguien entra a esa cuenta, entra también a tus fondos.</span>
+                  </div>
+                </li>
+              </ul>
+            </section>
 
-        <h3>Wallet no custodial</h3>
-        <p>
-          Acá cambia todo: vos generás y controlás la clave privada. Nadie más tiene
-          acceso.
-        </p>
-        <p>
-          Ventaja: control total y soberanía operativa.
-        </p>
-        <p>
-          Desventaja: la responsabilidad es tuya; si perdés la frase de
-          recuperación, perdés el acceso.
-        </p>
+            <section class="article-section">
+              <h2>Custodial vs no custodial</h2>
+              <p>
+                La diferencia más importante entre billeteras no es estética ni
+                de marca: es quién controla la clave privada.
+              </p>
+              <div class="comparison-grid">
+                <article class="comparison-card">
+                  <h3>Wallet custodial</h3>
+                  <p>
+                    En este modelo, una empresa guarda las claves por vos. Es lo
+                    que suele pasar cuando comprás Bitcoin en un exchange y solo
+                    ves un saldo dentro de tu cuenta.
+                  </p>
+                  <p>
+                    <strong>Ventaja:</strong> uso sencillo, recuperación de
+                    contraseña y experiencia parecida a la de un banco.
+                  </p>
+                  <p>
+                    <strong>Desventaja:</strong> no tenés control real y dependés
+                    de un tercero para acceder y mover fondos.
+                  </p>
+                </article>
+                <article class="comparison-card">
+                  <h3>Wallet no custodial</h3>
+                  <p>
+                    Acá cambia todo: vos generás y controlás la clave privada.
+                    Nadie más tiene acceso.
+                  </p>
+                  <p>
+                    <strong>Ventaja:</strong> control total y soberanía
+                    operativa.
+                  </p>
+                  <p>
+                    <strong>Desventaja:</strong> la responsabilidad es tuya; si
+                    perdés la frase de recuperación, perdés el acceso.
+                  </p>
+                </article>
+              </div>
+            </section>
 
-        <h2>5. Formatos prácticos de wallets no custodial</h2>
-        <p>
-          Dentro de la autocustodia, los formatos más comunes son:
-        </p>
-        <ul>
-          <li>
-            <strong>Wallet móvil:</strong> app en el celular, cómoda para uso diario
-            y montos pequeños.
-          </li>
-          <li>
-            <strong>Hardware wallet:</strong> dispositivo dedicado que mantiene las
-            claves fuera de internet (por ejemplo, Trezor o Coldcard), pensado para
-            ahorro de largo plazo.
-          </li>
-        </ul>
+            <section class="article-section">
+              <h2>Formatos prácticos de wallets no custodial</h2>
+              <p>
+                Dentro de la autocustodia, los formatos más comunes son estos:
+              </p>
+              <ul class="signal-grid">
+                <li>
+                  <div>
+                    <strong>Wallet móvil</strong>
+                    <span>App en el celular, cómoda para uso diario y montos pequeños.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Hardware wallet</strong>
+                    <span>Dispositivo dedicado que mantiene las claves fuera de internet, pensado para ahorro de largo plazo.</span>
+                  </div>
+                </li>
+              </ul>
+            </section>
 
-        <h2>6. Entonces, ¿qué significa realmente tener Bitcoin?</h2>
-        <p>
-          Significa controlar la clave privada. No importa qué app uses, qué
-          dispositivo tengas o en qué país vivas.
-        </p>
-        <p>
-          Si controlás la clave, controlás tus bitcoins. Si no la controlás,
-          dependés de alguien más.
-        </p>
+            <section class="article-section">
+              <h2>Qué significa realmente tener Bitcoin</h2>
+              <p>
+                Significa controlar la clave privada. No importa qué app uses, qué
+                dispositivo tengas o en qué país vivas.
+              </p>
+              <p>
+                Si controlás la clave, controlás tus bitcoins. Si no la
+                controlás, dependés de alguien más.
+              </p>
+            </section>
 
-        <h2>Conclusión</h2>
-        <p>
-          Entender cómo funciona una billetera es el paso base para relacionarte con
-          Bitcoin de manera consciente.
-        </p>
-        <p>
-          En el próximo artículo vamos a analizar qué riesgos existen al dejar
-          Bitcoin en un exchange y cómo evaluar cuándo tiene sentido dar el paso
-          hacia la autocustodia.
-        </p>
+            <div class="article-outro">
+              <strong>Para cerrar</strong>
+              Entender cómo funciona una billetera es el paso base para
+              relacionarte con Bitcoin de manera consciente. En el próximo
+              artículo vamos a analizar qué riesgos existen al dejar Bitcoin en un
+              exchange y cómo evaluar cuándo tiene sentido dar el paso hacia la
+              autocustodia.
+            </div>
 
-        <p class="next">Siguiente lectura: <a href="05-alerta-estafa.html">Qué hacer (y qué no) si sospechas una estafa</a></p>
+            <p class="next-link">
+              Siguiente lectura:
+              <a href="05-alerta-estafa.html">
+                Qué hacer (y qué no) si sospechas una estafa
+              </a>
+            </p>
+          </div>
+        </div>
       </article>
     </main>
   </body>
