@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DOMAIN: reemplazar https://estudiobtc.com con el dominio real -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://estudiobtc.com/</loc>
+    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://estudiobtc.com/cursos-info.html</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://estudiobtc.com/sobre-mi.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://estudiobtc.com/contacto.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://estudiobtc.com/articulos/01-que-es-bitcoin.html</loc>
+    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://estudiobtc.com/articulos/02-por-que-necesitamos-bitcoin.html</loc>
+    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://estudiobtc.com/articulos/03-comprar-vs-tener-bitcoin.html</loc>
+    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://estudiobtc.com/articulos/04-que-es-una-billetera-bitcoin.html</loc>
+    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://estudiobtc.com/articulos/05-alerta-estafa.html</loc>
+    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://estudiobtc.com/articulos/06-protocolo-personal.html</loc>
+    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+</urlset>
