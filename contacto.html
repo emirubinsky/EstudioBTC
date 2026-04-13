@@ -6,7 +6,7 @@
     <title>Contacto | EstudioBTC</title>
     <meta
       name="description"
-      content="Canales de contacto de EstudioBTC para consultas sobre capacitaciones de Bitcoin y autocustodia."
+      content="Canales de contacto de EstudioBTC para consultas sobre sesiones 1 a 1 de Bitcoin y autocustodia."
     />
     <script>
       document.documentElement.classList.add("js");
@@ -17,6 +17,18 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <!-- DOMAIN: reemplazar https://estudiobtc.com con el dominio real -->
+    <link rel="canonical" href="https://estudiobtc.com/contacto.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="EstudioBTC" />
+    <meta property="og:url" content="https://estudiobtc.com/contacto.html" />
+    <meta property="og:title" content="Contacto | EstudioBTC" />
+    <meta property="og:description" content="Escribile a Emiliano Rubinsky de EstudioBTC para consultas sobre sesiones 1 a 1 de Bitcoin y autocustodia." />
+    <meta property="og:locale" content="es_AR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Contacto | EstudioBTC" />
+    <meta name="twitter:description" content="Escribile a Emiliano Rubinsky de EstudioBTC para consultas sobre sesiones 1 a 1 de Bitcoin y autocustodia." />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -28,7 +40,7 @@
       <a href="index.html#home" class="brand">EstudioBTC</a>
       <nav class="main-nav">
         <a href="index.html#home">Home</a>
-        <a href="cursos-info.html">Capacitaciones</a>
+        <a href="cursos-info.html">Sesiones 1 a 1</a>
         <a href="sobre-mi.html">Sobre Mí</a>
         <a href="contacto.html" aria-current="page">Contacto</a>
       </nav>
@@ -42,19 +54,19 @@
             <p class="kicker">Contacto</p>
             <h1>Hablemos y definimos tu mejor próximo paso</h1>
             <p class="lead">
-              Si quieres empezar con Bitcoin desde una base segura o resolver si
+              Si querés empezar con Bitcoin desde una base segura o definir si
               hoy te conviene conceptos básicos, autocustodia o el pack completo,
-              escríbeme y te respondo con claridad.
+              escribime y te respondo con claridad.
             </p>
             <div class="hero-actions">
               <a href="#formulario" class="btn">Enviar consulta</a>
-              <a href="cursos-info.html" class="btn btn-outline">Ver capacitaciones</a>
+              <a href="cursos-info.html" class="btn btn-outline">Ver sesiones 1 a 1</a>
             </div>
           </div>
           <aside class="hero-panel hero-panel-compact">
-            <p class="panel-kicker">Qué puedes esperar</p>
+            <p class="panel-kicker">Qué podés esperar</p>
             <ol class="hero-steps hero-steps-compact">
-              <li>Cuéntame tu punto de partida y tu duda principal.</li>
+              <li>Contame tu punto de partida y tu duda principal.</li>
               <li>Te respondo con la opción que mejor encaje contigo.</li>
               <li>Si no es el momento adecuado, también te lo voy a decir.</li>
             </ol>
@@ -83,20 +95,32 @@
             </article>
           </div>
           <ol class="contact-process">
-            <li>Me compartes tu objetivo, nivel y principal inquietud.</li>
-            <li>Te sugiero la capacitación o modalidad más lógica para tu caso.</li>
+            <li>Contame tu objetivo, nivel y principal inquietud.</li>
+            <li>Te sugiero la opción o modalidad más lógica para tu caso.</li>
             <li>Coordinamos el siguiente paso sin presión ni urgencia artificial.</li>
           </ol>
         </div>
         <div>
           <div class="section-head">
             <p class="kicker">Formulario</p>
-            <h2>Cuéntame en qué necesitas ayuda</h2>
+            <h2>Contame en qué necesitás ayuda</h2>
             <p class="muted-text">
               Respuesta en menos de 24 horas hábiles. Nada de spam, nada de humo.
             </p>
           </div>
-          <form class="signup-form form-card">
+          <form
+            class="signup-form form-card"
+            action="https://formsubmit.co/5e33caf02e51cc3c48905cb3aa5fa174"
+            method="POST"
+            data-form-id="contacto"
+          >
+            <input type="hidden" name="form_name" value="Contacto" />
+            <input type="hidden" name="_subject" value="Nueva consulta desde Contacto" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="" />
+            <input type="hidden" name="_url" value="" />
+            <input type="hidden" name="timezone" value="" />
+            <input type="text" name="_honey" class="honeypot-field" tabindex="-1" autocomplete="off" />
             <label for="name">Nombre</label>
             <input
               id="name"
@@ -121,11 +145,11 @@
               id="message"
               name="message"
               rows="5"
-              placeholder="Cuéntame tu objetivo, tu nivel actual y qué te gustaría resolver."
+              placeholder="Contame tu objetivo, tu nivel actual y qué te gustaría resolver."
               required
             ></textarea>
             <button type="submit" class="btn">Enviar consulta</button>
-            <small>Respuesta en menos de 24 horas hábiles.</small>
+            <small data-form-note aria-live="polite">Consultame lo que necesites.</small>
           </form>
         </div>
       </section>
