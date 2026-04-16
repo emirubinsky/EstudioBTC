@@ -3,7 +3,7 @@ const signupForms = document.querySelectorAll(".signup-form");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const formSuccessMessages = {
   inscripciones:
-    "Consulta enviada. Te respondere a la brevedad. Si no ves mi respuesta en 24-48hs, revisá la carpeta de spam.",
+    "Consulta enviada. Te responderé a la brevedad. Si no ves mi respuesta en 24-48hs, revisá la carpeta de spam.",
   contacto:
     "Mensaje enviado. Te respondo a la brevedad.",
 };

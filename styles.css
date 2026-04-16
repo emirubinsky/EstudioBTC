@@ -342,10 +342,6 @@ h2 {
   min-width: 0;
 }
 
-.hero-grid-single {
-  grid-template-columns: minmax(0, 1fr);
-}
-
 .hero-panel {
   position: relative;
   padding: 1.3rem;
@@ -692,33 +688,6 @@ section {
   font-size: clamp(1.45rem, 2.35vw, 1.95rem);
 }
 
-.faq-question-inline {
-  white-space: nowrap;
-}
-
-.faq-card-fit,
-.faq-card-fit h3 {
-  font-size: 1.04rem;
-  line-height: 1.2;
-}
-
-.faq-card-fit p {
-  font-size: 0.97rem;
-  line-height: 1.58;
-}
-
-.faq-card-tight {
-  gap: 0;
-}
-
-.faq-card-tight h3 {
-  margin-bottom: 0;
-}
-
-.faq-card-tight p {
-  margin-top: -0.16rem;
-}
-
 .instructor h2 + p {
   margin: 0.5rem 0 0;
 }
@@ -856,14 +825,6 @@ section {
   gap: 0.45rem;
 }
 
-.article-meta {
-  margin: 0;
-  font-size: 0.8rem;
-  color: var(--accent-2) !important;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 .text-link {
   color: #ffdca0;
   text-decoration: none;
@@ -915,12 +876,6 @@ section {
   color: #d9b776;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-
-.price-normal {
-  margin: 0;
-  color: #9f957f;
-  font-size: 0.88rem;
 }
 
 .price-card ul {
@@ -1365,10 +1320,6 @@ section {
     white-space: normal;
   }
 
-  .faq-question-inline {
-    white-space: normal;
-  }
-
   .summary-card,
   .hero-panel,
   .contact-panel,
@@ -1579,20 +1530,6 @@ section {
   max-width: 48ch;
 }
 
-.cta-urgency {
-  display: inline-block;
-  background: linear-gradient(135deg, #f7931a20, #e87e0015);
-  border: 1px solid #5c4321;
-  color: var(--accent-2);
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.8rem;
-}
-
 .cta-guarantee {
   margin-top: 1.2rem;
   padding: 0.8rem 1rem;
@@ -1650,26 +1587,6 @@ section {
     font-size: 1.2rem;
   }
 
-  .social-proof {
-    padding: 1.5rem 1rem;
-  }
-
-  .social-proof-stats {
-    gap: 1.5rem;
-  }
-
-  .stat-number {
-    font-size: 1.8rem;
-  }
-
-  .testimonials {
-    gap: 0.8rem;
-  }
-
-  .testimonial-card {
-    padding: 1rem;
-  }
-
   .faq-question {
     font-size: 1rem;
     padding: 0.9rem 1rem;
@@ -1677,10 +1594,6 @@ section {
 
   .faq-answer {
     padding: 0 1rem 0.9rem;
-  }
-
-  .cta-urgency {
-    font-size: 0.7rem;
   }
 
   .cta {

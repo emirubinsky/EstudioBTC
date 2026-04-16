@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# DOMAIN: reemplazar con el dominio real cuando esté disponible
 Sitemap: https://estudiobtc.com/sitemap.xml
