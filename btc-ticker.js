@@ -1,6 +1,7 @@
 const btcPriceEl = document.querySelector("#btcPrice");
 const btcChangeEl = document.querySelector("#btcChange");
 const btcUpdatedEl = document.querySelector("#btcUpdated");
+const btcSparkEl = document.querySelector("#btcSpark");
 
 if (btcPriceEl && btcChangeEl && btcUpdatedEl) {
   const usdFormatterRounded = new Intl.NumberFormat("es-AR", {
@@ -46,6 +47,114 @@ if (btcPriceEl && btcChangeEl && btcUpdatedEl) {
     btcUpdatedEl.textContent = new Date().toLocaleTimeString("es-AR", {
       hour: "2-digit",
       minute: "2-digit",
+    });
+
+    updateSparklineWithCurrent(price);
+  }
+
+  let sparklinePrices = null;
+  let sparklineLoaded = false;
+
+  async function fetchSparklinePrices() {
+    try {
+      const data = await fetchJsonWithTimeout(
+        "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1",
+        6000
+      );
+      if (!data || !Array.isArray(data.prices)) return null;
+      return data.prices.map((p) => p[1]).filter((v) => Number.isFinite(v));
+    } catch {
+      return null;
+    }
+  }
+
+  function renderSparkline(prices) {
+    if (!btcSparkEl || !prices || prices.length < 2) return;
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = btcSparkEl.clientWidth || 280;
+    const h = btcSparkEl.clientHeight || 42;
+    btcSparkEl.width = Math.floor(w * dpr);
+    btcSparkEl.height = Math.floor(h * dpr);
+
+    const ctx = btcSparkEl.getContext("2d");
+    if (!ctx) return;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, w, h);
+
+    const min = Math.min(...prices);
+    const max = Math.max(...prices);
+    const range = max - min || 1;
+    const padY = 4;
+    const x = (i) => (i / (prices.length - 1)) * w;
+    const y = (p) => h - padY - ((p - min) / range) * (h - padY * 2);
+
+    const up = prices[prices.length - 1] >= prices[0];
+    const stroke = up ? "#f7a534" : "#ff9a9a";
+    const fillTop = up ? "rgba(247, 165, 52, 0.34)" : "rgba(255, 154, 154, 0.28)";
+    const fillBottom = up ? "rgba(247, 165, 52, 0)" : "rgba(255, 154, 154, 0)";
+
+    const grad = ctx.createLinearGradient(0, 0, 0, h);
+    grad.addColorStop(0, fillTop);
+    grad.addColorStop(1, fillBottom);
+
+    ctx.beginPath();
+    ctx.moveTo(0, h);
+    prices.forEach((p, i) => ctx.lineTo(x(i), y(p)));
+    ctx.lineTo(w, h);
+    ctx.closePath();
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    ctx.beginPath();
+    prices.forEach((p, i) => {
+      const xi = x(i);
+      const yi = y(p);
+      if (i === 0) ctx.moveTo(xi, yi);
+      else ctx.lineTo(xi, yi);
+    });
+    ctx.strokeStyle = stroke;
+    ctx.lineWidth = 1.5;
+    ctx.lineJoin = "round";
+    ctx.lineCap = "round";
+    ctx.shadowColor = up ? "rgba(247, 165, 52, 0.5)" : "rgba(255, 154, 154, 0.4)";
+    ctx.shadowBlur = 6;
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+
+    const lastX = x(prices.length - 1);
+    const lastY = y(prices[prices.length - 1]);
+    ctx.beginPath();
+    ctx.arc(lastX, lastY, 2.6, 0, Math.PI * 2);
+    ctx.fillStyle = stroke;
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(lastX, lastY, 5, 0, Math.PI * 2);
+    ctx.fillStyle = up ? "rgba(247, 165, 52, 0.22)" : "rgba(255, 154, 154, 0.22)";
+    ctx.fill();
+  }
+
+  function updateSparklineWithCurrent(price) {
+    if (!btcSparkEl || !sparklinePrices || !Number.isFinite(price)) return;
+    sparklinePrices = [...sparklinePrices.slice(-179), price];
+    renderSparkline(sparklinePrices);
+  }
+
+  async function initSparkline() {
+    if (!btcSparkEl || sparklineLoaded) return;
+    sparklineLoaded = true;
+    const prices = await fetchSparklinePrices();
+    if (!prices || prices.length < 2) return;
+    sparklinePrices = prices;
+    renderSparkline(sparklinePrices);
+  }
+
+  if (btcSparkEl) {
+    let resizeTimer = null;
+    window.addEventListener("resize", () => {
+      if (resizeTimer) clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => renderSparkline(sparklinePrices), 150);
     });
   }
 
@@ -343,5 +452,6 @@ if (btcPriceEl && btcChangeEl && btcUpdatedEl) {
     updateBtcPriceFromRest();
     connectBtcWebSocket();
     startBackupRefresh();
+    initSparkline();
   }
 }
